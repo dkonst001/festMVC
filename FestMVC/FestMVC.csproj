@@ -292,6 +292,10 @@
     <Compile Include="Migrations\201703092106385_Clear FestivalViewModel.Designer.cs">
       <DependentUpon>201703092106385_Clear FestivalViewModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703111437026_Delete Start Time and End Time from Events.cs" />
+    <Compile Include="Migrations\201703111437026_Delete Start Time and End Time from Events.Designer.cs">
+      <DependentUpon>201703111437026_Delete Start Time and End Time from Events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EventViewModel.cs" />
     <Compile Include="Models\FileViewModels.cs" />
     <Compile Include="Models\IncrementedViewModel.cs" />
@@ -632,6 +636,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703092106385_Clear FestivalViewModel.resx">
       <DependentUpon>201703092106385_Clear FestivalViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703111437026_Delete Start Time and End Time from Events.resx">
+      <DependentUpon>201703111437026_Delete Start Time and End Time from Events.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
