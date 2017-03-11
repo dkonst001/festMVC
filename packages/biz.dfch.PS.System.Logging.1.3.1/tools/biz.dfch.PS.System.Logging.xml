@@ -1,0 +1,102 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Deserialized.System.Collections.Hashtable</T>
+      <T>Deserialized.System.Object</T>
+    </TN>
+    <DCT>
+      <En>
+        <S N="Key">DirectoryFormat</S>
+        <S N="Value">yyyy-MM</S>
+      </En>
+      <En>
+        <S N="Key">FileLogging</S>
+        <B N="Value">true</B>
+      </En>
+      <En>
+        <S N="Key">EventSource</S>
+        <S N="Value">Default</S>
+      </En>
+      <En>
+        <S N="Key">Severity</S>
+        <Obj N="Value" RefId="19">
+          <TNRef RefId="0" />
+          <DCT>
+            <En>
+              <S N="Key">INFORMATIONAL</S>
+              <I32 N="Value">6</I32>
+            </En>
+            <En>
+              <S N="Key">INFO</S>
+              <I32 N="Value">6</I32>
+            </En>
+            <En>
+              <S N="Key">NOTICE</S>
+              <I32 N="Value">5</I32>
+            </En>
+            <En>
+              <S N="Key">WARN</S>
+              <I32 N="Value">4</I32>
+            </En>
+            <En>
+              <S N="Key">DEBUG</S>
+              <I32 N="Value">7</I32>
+            </En>
+            <En>
+              <S N="Key">ERROR</S>
+              <I32 N="Value">3</I32>
+            </En>
+            <En>
+              <S N="Key">CRITICAL</S>
+              <I32 N="Value">2</I32>
+            </En>
+            <En>
+              <S N="Key">ALERT</S>
+              <I32 N="Value">1</I32>
+            </En>
+            <En>
+              <S N="Key">DBG</S>
+              <I32 N="Value">7</I32>
+            </En>
+            <En>
+              <S N="Key">WARNING</S>
+              <I32 N="Value">4</I32>
+            </En>
+            <En>
+              <S N="Key">ERR</S>
+              <I32 N="Value">3</I32>
+            </En>
+            <En>
+              <S N="Key">EMERGENCY</S>
+              <I32 N="Value">0</I32>
+            </En>
+          </DCT>
+        </Obj>
+      </En>
+      <En>
+        <S N="Key">DirectoryBase</S>
+        <S N="Value">C:\Logs\biz.dfch.PS.System.Logging</S>
+      </En>
+      <En>
+        <S N="Key">FileFormat</S>
+        <S N="Value">yyyy-MM</S>
+      </En>
+      <En>
+        <S N="Key">EventLogging</S>
+        <B N="Value">false</B>
+      </En>
+      <En>
+        <S N="Key">Log4NetFileAppender</S>
+        <S N="Value">RollingLogFileAppender</S>
+      </En>
+      <En>
+        <S N="Key">Log4NetConfigurationFile</S>
+        <S N="Value">Log4netConfiguration.xml</S>
+      </En>
+      <En>
+        <S N="Key">Log4NetLogger</S>
+        <S N="Value">biz.dfch.PS.System.Logging</S>
+      </En>
+    </DCT>
+  </Obj>
+</Objs>

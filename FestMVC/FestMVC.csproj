@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44349</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -34,6 +34,18 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="Server=tcp:festmvc20170301111312dbserver.database.windows.net,1433%3bInitial Catalog=FestMVC20170301111312_db%3bPersist Security Info=False%3bUser ID=DannyAdmin%3bPassword=Pass%401234%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-FestMVC-20170212113854.mdf%3bInitial Catalog=aspnet-FestMVC-20170212113854%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,14 +56,77 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,9 +187,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -178,19 +250,168 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\EventsController.cs" />
+    <Compile Include="Controllers\API\FestivalsController.cs" />
+    <Compile Include="Controllers\ArenasController.cs" />
+    <Compile Include="Controllers\API\EnrollmentsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
+    <Compile Include="Controllers\EventImagesController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\FestivalEnrollmentsController.cs" />
+    <Compile Include="Controllers\FestivalManagersController.cs" />
+    <Compile Include="Controllers\FestivalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Increment2Controller.cs" />
+    <Compile Include="Controllers\IncrementController.cs" />
+    <Compile Include="Controllers\InstructorsController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703011311088_Add Location model.cs" />
+    <Compile Include="Migrations\201703011311088_Add Location model.Designer.cs">
+      <DependentUpon>201703011311088_Add Location model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703011325115_Change Room to point to Location.cs" />
+    <Compile Include="Migrations\201703011325115_Change Room to point to Location.Designer.cs">
+      <DependentUpon>201703011325115_Change Room to point to Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703011335450_Change Festival to point to Location.cs" />
+    <Compile Include="Migrations\201703011335450_Change Festival to point to Location.Designer.cs">
+      <DependentUpon>201703011335450_Change Festival to point to Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703092054534_Add start and end time to Event.cs" />
+    <Compile Include="Migrations\201703092054534_Add start and end time to Event.Designer.cs">
+      <DependentUpon>201703092054534_Add start and end time to Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703092106385_Clear FestivalViewModel.cs" />
+    <Compile Include="Migrations\201703092106385_Clear FestivalViewModel.Designer.cs">
+      <DependentUpon>201703092106385_Clear FestivalViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventViewModel.cs" />
+    <Compile Include="Models\FileViewModels.cs" />
+    <Compile Include="Models\IncrementedViewModel.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationTypes.cs" />
+    <Compile Include="OtherClasses\Utilities.cs" />
+    <Compile Include="Migrations\201702131229444_New All.cs" />
+    <Compile Include="Migrations\201702131229444_New All.Designer.cs">
+      <DependentUpon>201702131229444_New All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702131259054_Add validations.cs" />
+    <Compile Include="Migrations\201702131259054_Add validations.Designer.cs">
+      <DependentUpon>201702131259054_Add validations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702140706284_Sync.cs" />
+    <Compile Include="Migrations\201702140706284_Sync.Designer.cs">
+      <DependentUpon>201702140706284_Sync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702140745520_Sync1.cs" />
+    <Compile Include="Migrations\201702140745520_Sync1.Designer.cs">
+      <DependentUpon>201702140745520_Sync1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702141238448_Enrollment Event Id to long.cs" />
+    <Compile Include="Migrations\201702141238448_Enrollment Event Id to long.Designer.cs">
+      <DependentUpon>201702141238448_Enrollment Event Id to long.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702151308013_Add Events to Festival.cs" />
+    <Compile Include="Migrations\201702151308013_Add Events to Festival.Designer.cs">
+      <DependentUpon>201702151308013_Add Events to Festival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702242231208_EventImages.cs" />
+    <Compile Include="Migrations\201702242231208_EventImages.Designer.cs">
+      <DependentUpon>201702242231208_EventImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702242239292_Category-ID deleted from Event.cs" />
+    <Compile Include="Migrations\201702242239292_Category-ID deleted from Event.Designer.cs">
+      <DependentUpon>201702242239292_Category-ID deleted from Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702242256245_Add Category-ID to Festival.cs" />
+    <Compile Include="Migrations\201702242256245_Add Category-ID to Festival.Designer.cs">
+      <DependentUpon>201702242256245_Add Category-ID to Festival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702242330484_Add virtual FestivalManager to Festival.cs" />
+    <Compile Include="Migrations\201702242330484_Add virtual FestivalManager to Festival.Designer.cs">
+      <DependentUpon>201702242330484_Add virtual FestivalManager to Festival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702242335176_Add virtual Category to Festival.cs" />
+    <Compile Include="Migrations\201702242335176_Add virtual Category to Festival.Designer.cs">
+      <DependentUpon>201702242335176_Add virtual Category to Festival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250020123_Add name to ApplicationUser.cs" />
+    <Compile Include="Migrations\201702250020123_Add name to ApplicationUser.Designer.cs">
+      <DependentUpon>201702250020123_Add name to ApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250039101_take name out from Instructor.cs" />
+    <Compile Include="Migrations\201702250039101_take name out from Instructor.Designer.cs">
+      <DependentUpon>201702250039101_take name out from Instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250040408_Add virtual User to Instructor.cs" />
+    <Compile Include="Migrations\201702250040408_Add virtual User to Instructor.Designer.cs">
+      <DependentUpon>201702250040408_Add virtual User to Instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250820293_Add About to Instructor.cs" />
+    <Compile Include="Migrations\201702250820293_Add About to Instructor.Designer.cs">
+      <DependentUpon>201702250820293_Add About to Instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250833138_About in Instructor to Multiline and UserId required.cs" />
+    <Compile Include="Migrations\201702250833138_About in Instructor to Multiline and UserId required.Designer.cs">
+      <DependentUpon>201702250833138_About in Instructor to Multiline and UserId required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702251739588_Test Arena.cs" />
+    <Compile Include="Migrations\201702251739588_Test Arena.Designer.cs">
+      <DependentUpon>201702251739588_Test Arena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702251859496_Add related Properties for dropdown.cs" />
+    <Compile Include="Migrations\201702251859496_Add related Properties for dropdown.Designer.cs">
+      <DependentUpon>201702251859496_Add related Properties for dropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702251913060_Add related User fpr Enrollment.cs" />
+    <Compile Include="Migrations\201702251913060_Add related User fpr Enrollment.Designer.cs">
+      <DependentUpon>201702251913060_Add related User fpr Enrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260446480_Add Festival Enrollments.cs" />
+    <Compile Include="Migrations\201702260446480_Add Festival Enrollments.Designer.cs">
+      <DependentUpon>201702260446480_Add Festival Enrollments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260718185_Change UserID to UserId.cs" />
+    <Compile Include="Migrations\201702260718185_Change UserID to UserId.Designer.cs">
+      <DependentUpon>201702260718185_Change UserID to UserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260843413_deleted Increments table.cs" />
+    <Compile Include="Migrations\201702260843413_deleted Increments table.Designer.cs">
+      <DependentUpon>201702260843413_deleted Increments table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702261624016_Handle File load.cs" />
+    <Compile Include="Migrations\201702261624016_Handle File load.Designer.cs">
+      <DependentUpon>201702261624016_Handle File load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Arena.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventImage.cs" />
+    <Compile Include="Models\Festival.cs" />
+    <Compile Include="Models\FestivalEnrollment.cs" />
+    <Compile Include="Models\FestivalManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Increment.cs" />
+    <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap - Copy.old" />
     <Content Include="Content\bootstrap.css" />
+    <None Include="Content\bootstrap.min - Copy.old" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -198,10 +419,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\FestMVC20170301111312 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DisplayImage.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -210,14 +438,18 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -244,9 +476,69 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\_LayoutPage1.cshtml" />
+    <Content Include="Views\Arenas\Create.cshtml" />
+    <Content Include="Views\Arenas\Delete.cshtml" />
+    <Content Include="Views\Arenas\Details.cshtml" />
+    <Content Include="Views\Arenas\Edit.cshtml" />
+    <Content Include="Views\Arenas\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\FestivalManagers\Create.cshtml" />
+    <Content Include="Views\FestivalManagers\Delete.cshtml" />
+    <Content Include="Views\FestivalManagers\Details.cshtml" />
+    <Content Include="Views\FestivalManagers\Edit.cshtml" />
+    <Content Include="Views\FestivalManagers\Index.cshtml" />
+    <Content Include="Views\Instructors\Create.cshtml" />
+    <Content Include="Views\Instructors\Delete.cshtml" />
+    <Content Include="Views\Instructors\Details.cshtml" />
+    <Content Include="Views\Instructors\Edit.cshtml" />
+    <Content Include="Views\Instructors\Index.cshtml" />
+    <Content Include="Views\Festivals\Create.cshtml" />
+    <Content Include="Views\Festivals\Delete.cshtml" />
+    <Content Include="Views\Festivals\Details.cshtml" />
+    <Content Include="Views\Festivals\Edit.cshtml" />
+    <Content Include="Views\Festivals\Index.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\FestivalEnrollments\Create.cshtml" />
+    <Content Include="Views\FestivalEnrollments\Delete.cshtml" />
+    <Content Include="Views\FestivalEnrollments\Details.cshtml" />
+    <Content Include="Views\FestivalEnrollments\Edit.cshtml" />
+    <Content Include="Views\FestivalEnrollments\Index.cshtml" />
+    <Content Include="Views\Increment\Index.cshtml" />
+    <Content Include="Views\EventImages\Create.cshtml" />
+    <Content Include="Views\EventImages\Delete.cshtml" />
+    <Content Include="Views\EventImages\Details.cshtml" />
+    <Content Include="Views\EventImages\Edit.cshtml" />
+    <Content Include="Views\EventImages\Index.cshtml" />
+    <Content Include="Views\Shared\_LoadImage.cshtml" />
+    <Content Include="Views\Increment\_Incremented.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Rooms\Create.cshtml" />
+    <Content Include="Views\Rooms\Delete.cshtml" />
+    <Content Include="Views\Rooms\Details.cshtml" />
+    <Content Include="Views\Rooms\Edit.cshtml" />
+    <Content Include="Views\Rooms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Increment2\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -255,6 +547,92 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702131229444_New All.resx">
+      <DependentUpon>201702131229444_New All.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702131259054_Add validations.resx">
+      <DependentUpon>201702131259054_Add validations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702140706284_Sync.resx">
+      <DependentUpon>201702140706284_Sync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702140745520_Sync1.resx">
+      <DependentUpon>201702140745520_Sync1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702141238448_Enrollment Event Id to long.resx">
+      <DependentUpon>201702141238448_Enrollment Event Id to long.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702151308013_Add Events to Festival.resx">
+      <DependentUpon>201702151308013_Add Events to Festival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702242231208_EventImages.resx">
+      <DependentUpon>201702242231208_EventImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702242239292_Category-ID deleted from Event.resx">
+      <DependentUpon>201702242239292_Category-ID deleted from Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702242256245_Add Category-ID to Festival.resx">
+      <DependentUpon>201702242256245_Add Category-ID to Festival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702242330484_Add virtual FestivalManager to Festival.resx">
+      <DependentUpon>201702242330484_Add virtual FestivalManager to Festival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702242335176_Add virtual Category to Festival.resx">
+      <DependentUpon>201702242335176_Add virtual Category to Festival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250020123_Add name to ApplicationUser.resx">
+      <DependentUpon>201702250020123_Add name to ApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250039101_take name out from Instructor.resx">
+      <DependentUpon>201702250039101_take name out from Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250040408_Add virtual User to Instructor.resx">
+      <DependentUpon>201702250040408_Add virtual User to Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250820293_Add About to Instructor.resx">
+      <DependentUpon>201702250820293_Add About to Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250833138_About in Instructor to Multiline and UserId required.resx">
+      <DependentUpon>201702250833138_About in Instructor to Multiline and UserId required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702251739588_Test Arena.resx">
+      <DependentUpon>201702251739588_Test Arena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702251859496_Add related Properties for dropdown.resx">
+      <DependentUpon>201702251859496_Add related Properties for dropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702251913060_Add related User fpr Enrollment.resx">
+      <DependentUpon>201702251913060_Add related User fpr Enrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260446480_Add Festival Enrollments.resx">
+      <DependentUpon>201702260446480_Add Festival Enrollments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260718185_Change UserID to UserId.resx">
+      <DependentUpon>201702260718185_Change UserID to UserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260843413_deleted Increments table.resx">
+      <DependentUpon>201702260843413_deleted Increments table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702261624016_Handle File load.resx">
+      <DependentUpon>201702261624016_Handle File load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703011311088_Add Location model.resx">
+      <DependentUpon>201703011311088_Add Location model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703011325115_Change Room to point to Location.resx">
+      <DependentUpon>201703011325115_Change Room to point to Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703011335450_Change Festival to point to Location.resx">
+      <DependentUpon>201703011335450_Change Festival to point to Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703092054534_Add start and end time to Event.resx">
+      <DependentUpon>201703092054534_Add start and end time to Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703092106385_Clear FestivalViewModel.resx">
+      <DependentUpon>201703092106385_Clear FestivalViewModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

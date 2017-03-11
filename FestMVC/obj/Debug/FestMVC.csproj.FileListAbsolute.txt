@@ -1,0 +1,358 @@
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\ApplicationInsights.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\csc.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\vbc.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\FestMVC.dll.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\FestMVC.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Antlr3.Runtime.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\EntityFramework.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.Web.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Newtonsoft.Json.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Helpers.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Http.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Mvc.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Optimization.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Razor.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\WebGrease.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.Web.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Helpers.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Mvc.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Optimization.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Razor.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Antlr3.Runtime.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Newtonsoft.Json.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Net.Http.Formatting.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Http.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\System.Web.Http.WebHost.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\EntityFramework.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.NewAll.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.csproj.GenerateResource.Cache
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Addvalidations.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync1.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.EnrollmentEventIdtolong.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddEventstoFestival.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\obj\Debug\FestMVC.csprojResolveAssemblyReference.cache
+D:\dani\FestMVC\FestMVC\bin\ApplicationInsights.config
+D:\dani\FestMVC\FestMVC\bin\roslyn\csc.exe
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\dani\FestMVC\FestMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\dani\FestMVC\FestMVC\bin\roslyn\System.Collections.Immutable.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\dani\FestMVC\FestMVC\bin\roslyn\vbc.exe
+D:\dani\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe
+D:\dani\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe.config
+D:\dani\FestMVC\FestMVC\bin\FestMVC.dll.config
+D:\dani\FestMVC\FestMVC\bin\FestMVC.dll
+D:\dani\FestMVC\FestMVC\bin\FestMVC.pdb
+D:\dani\FestMVC\FestMVC\bin\Antlr3.Runtime.dll
+D:\dani\FestMVC\FestMVC\bin\EntityFramework.dll
+D:\dani\FestMVC\FestMVC\bin\EntityFramework.SqlServer.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.Agent.Intercept.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.Web.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\dani\FestMVC\FestMVC\bin\Newtonsoft.Json.dll
+D:\dani\FestMVC\FestMVC\bin\Owin.dll
+D:\dani\FestMVC\FestMVC\bin\System.Net.Http.Formatting.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Helpers.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Http.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Http.WebHost.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Mvc.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Optimization.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.Razor.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.dll
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.dll
+D:\dani\FestMVC\FestMVC\bin\WebGrease.dll
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.Web.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Helpers.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Mvc.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Optimization.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Razor.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.xml
+D:\dani\FestMVC\FestMVC\bin\Antlr3.Runtime.pdb
+D:\dani\FestMVC\FestMVC\bin\Newtonsoft.Json.xml
+D:\dani\FestMVC\FestMVC\bin\System.Net.Http.Formatting.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Http.xml
+D:\dani\FestMVC\FestMVC\bin\System.Web.Http.WebHost.xml
+D:\dani\FestMVC\FestMVC\bin\EntityFramework.xml
+D:\dani\FestMVC\FestMVC\bin\EntityFramework.SqlServer.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\dani\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.csprojResolveAssemblyReference.cache
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.NewAll.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Addvalidations.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync1.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.EnrollmentEventIdtolong.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddEventstoFestival.resources
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.csproj.GenerateResource.Cache
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.dll
+D:\dani\FestMVC\FestMVC\obj\Debug\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ApplicationInsights.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\csc.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\vbc.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\FestMVC.dll.config
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\FestMVC.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Antlr3.Runtime.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\EntityFramework.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.Web.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.Edm.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.OData.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.Services.Client.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.WindowsAzure.Diagnostics.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Newtonsoft.Json.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Owin.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Spatial.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Helpers.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Http.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Mvc.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Optimization.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Razor.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\WebGrease.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\MonAgentListener.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.Web.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Azure.KeyVault.Core.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.Edm.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.OData.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Data.Services.Client.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.WindowsAzure.Storage.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.WindowsAzure.Storage.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Newtonsoft.Json.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Spatial.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Helpers.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Mvc.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Optimization.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Razor.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Antlr3.Runtime.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Net.Http.Formatting.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Http.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\System.Web.Http.WebHost.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\EntityFramework.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\de\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\es\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\fr\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\it\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ja\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ko\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ru\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.NewAll.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Addvalidations.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync1.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.EnrollmentEventIdtolong.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddEventstoFestival.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.EventImages.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.CategoryIDdeletedfromEvent.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddCategoryIDtoFestival.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddvirtualFestivalManagertoFestival.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddvirtualCategorytoFestival.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddnametoApplicationUser.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.takenameoutfromInstructor.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddvirtualUsertoInstructor.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddAbouttoInstructor.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AboutinInstructortoMultilineandUserIdrequired.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.TestArena.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddrelatedPropertiesfordropdown.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddrelatedUserfprEnrollment.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddFestivalEnrollments.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ChangeUserIDtoUserId.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.deletedIncrementstable.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.HandleFileload.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddLocationmodel.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ChangeRoomtopointtoLocation.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ChangeFestivaltopointtoLocation.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddstartandendtimetoEvent.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ClearFestivalViewModel.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csproj.GenerateResource.Cache
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.dll
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csprojResolveAssemblyReference.cache
