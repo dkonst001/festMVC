@@ -16,6 +16,7 @@ namespace FestMVC.Models
         public string Name { get; set; }
         public string Description { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
         
         public DateTime EndDate { get; set; }
@@ -52,6 +53,16 @@ namespace FestMVC.Models
             EndDate=EndDate.Add(endTime.TimeOfDay);
         }
 
-
+        public Event(long id, string name, string description, long festivalId, long instructorId,
+                    long roomId, DateTime startDate)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            FestivalId = festivalId;
+            InstructorId = instructorId;
+            RoomId = roomId;
+            StartDate = startDate;
+        }
     }
 }

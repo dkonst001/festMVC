@@ -33,7 +33,9 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival,@event.Room,@event.Instructor);
+            return View(@eventViewModel);
         }
 
         // GET: Events/Create
@@ -82,10 +84,12 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId,@event.StartDate,@event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", @event.FestivalId);
             PopulateDropDownList(@event.InstructorId, @event.FestivalId, @event.RoomId);
             //ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", @event.RoomId);
-            return View(@event);
+            return View(@eventViewModel);
         }
 
         // POST: Events/Edit/5
@@ -93,19 +97,24 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,StartDate,EndDate,FestivalId,InstructorId,RoomId")] Event @event)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,StartDate,StartTime,EndTime,FestivalId,InstructorId,RoomId")] EventViewModel @eventViewModel)
         {
             if (ModelState.IsValid)
             {
+
+                Event @event = new Event(@eventViewModel.Id, @eventViewModel.Name, @eventViewModel.Description, @eventViewModel.FestivalId,
+                    @eventViewModel.InstructorId, @eventViewModel.RoomId,
+                    @eventViewModel.StartDate, @eventViewModel.StartTime, @eventViewModel.EndTime);
+
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", @event.FestivalId);
-            PopulateDropDownList(@event.InstructorId, @event.FestivalId, @event.RoomId);
+            PopulateDropDownList(@eventViewModel.InstructorId, @eventViewModel.FestivalId, @eventViewModel.RoomId);
             //ViewBag.InstructorId = new SelectList(db.Instructors, "Id", "UserId", @event.InstructorId);
             //ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", @event.RoomId);
-            return View(@event);
+            return View(@eventViewModel);
         }
 
         // GET: Events/Delete/5
@@ -120,7 +129,9 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id,@event.Name,@event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival, @event.Room, @event.Instructor);
+            return View(@eventViewModel);
         }
 
         // POST: Events/Delete/5

@@ -1,4 +1,4 @@
-﻿@model FestMVC.Models.Event
+﻿@model FestMVC.Models.EventViewModel
 
 @{
     ViewBag.Title = "Delete";
@@ -20,22 +20,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Instructor.User.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Instructor.User.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Room.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Room.Name)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
@@ -52,6 +36,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.StartTime)
         </dt>
 
@@ -65,6 +57,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instructor.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instructor.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.Name)
         </dd>
 
     </dl>
