@@ -357,3 +357,4 @@ C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestM
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csproj.GenerateResource.Cache
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.dll
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.pdb
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddBaseEnrollmentwithNumOfTickets.resources
