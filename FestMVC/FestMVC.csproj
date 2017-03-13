@@ -296,6 +296,11 @@
     <Compile Include="Migrations\201703111437026_Delete Start Time and End Time from Events.Designer.cs">
       <DependentUpon>201703111437026_Delete Start Time and End Time from Events.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703112003428_Add Base Enrollment with NumOfTickets.cs" />
+    <Compile Include="Migrations\201703112003428_Add Base Enrollment with NumOfTickets.Designer.cs">
+      <DependentUpon>201703112003428_Add Base Enrollment with NumOfTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseEnrollment.cs" />
     <Compile Include="Models\EventViewModel.cs" />
     <Compile Include="Models\FileViewModels.cs" />
     <Compile Include="Models\IncrementedViewModel.cs" />
@@ -639,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703111437026_Delete Start Time and End Time from Events.resx">
       <DependentUpon>201703111437026_Delete Start Time and End Time from Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703112003428_Add Base Enrollment with NumOfTickets.resx">
+      <DependentUpon>201703112003428_Add Base Enrollment with NumOfTickets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
