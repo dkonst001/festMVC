@@ -324,7 +324,6 @@ C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestM
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\ru\System.Spatial.resources.dll
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csprojResolveAssemblyReference.cache
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.NewAll.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Addvalidations.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.Sync.resources
@@ -354,7 +353,8 @@ C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestM
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddstartandendtimetoEvent.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ClearFestivalViewModel.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.DeleteStartTimeandEndTimefromEvents.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddBaseEnrollmentwithNumOfTickets.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csproj.GenerateResource.Cache
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.dll
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.pdb
-C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddBaseEnrollmentwithNumOfTickets.resources
+C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.csprojResolveAssemblyReference.cache

@@ -10,7 +10,7 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
-    public class EventsController : Controller
+    public class EventsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

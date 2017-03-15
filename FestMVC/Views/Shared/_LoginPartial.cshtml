@@ -1,21 +1,50 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
+
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
+        ViewBag.Greet = "Hello  " + ViewBag.Name + "  !";
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    @ViewBag.Greet  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        @Html.ActionLink("Account Setting", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage"})
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage Locations", "Index", "Locations")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage Instructors", "Index", "Instructors")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage Festivals", "Index", "Festivals")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage Festival Managers", "Index", "FestivalManagers")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Manage Categories", "Index", "Categories")
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
     }
 }
+
 else
+
 {
     <ul class="nav navbar-nav navbar-right">
+
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>

@@ -1,16 +1,19 @@
 ﻿@model FestMVC.Models.FileViewModels
+
+
+
 <div class="form-group">
-        @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(model => model.File, new { @class = "text-danger", @id = "fileupload", type = "file", accept = ViewBag.accept })
-            @Html.ValidationMessageFor(model => model.File)
-            <div id="dvPreview">
-            </div>
+    @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.File, new { @class = "text-danger", @id = "fileupload", type = "file", accept = ViewBag.accept })
+        @Html.ValidationMessageFor(model => model.File)
+        <div id="dvPreview">
+            @if (ViewBag.FileName != null) {
+                <img src="@Url.Content(ViewBag.FileName)" id="imgDisplay" alt="Please Load Your Image" />
+            }
         </div>
     </div>
+</div>
 
-@Scripts.RenderFormat("<script language=\"javascript\" type=\"text/javascript\" src={0}></script>", "~/Scripts/DisplayImage.js")
 
-
-   
 

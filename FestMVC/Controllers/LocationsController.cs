@@ -10,7 +10,7 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
-    public class LocationsController : Controller
+    public class LocationsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
