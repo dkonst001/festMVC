@@ -9,6 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        SELECT
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="/Festivals/Index">Festivals</a></li>
+        <li><a href=@Url.Action("Index", "Events")>Events</a></li>
+    </ul>
+</div>
+
 <table class="table">
     <tr>
         <th>

@@ -7,16 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace FestMVC.Controllers
 {
-    public class FestivalsController : Controller
+    public class FestivalsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        
 
         // GET: Festivals
         public ActionResult Index()
         {
+            
             var festivals = db.Festivals.Include(f => f.Category).Include(f=>f.Location).Include(f => f.FestivalManager);
             return View(festivals.ToList());
         }

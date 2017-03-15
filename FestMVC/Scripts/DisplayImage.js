@@ -9,12 +9,12 @@
                   }
                   else {
                       if (typeof (FileReader) != "undefined") {
-                          $("#dvPreview").show();
-                          $("#dvPreview").append("<img />");
+                          //$("#dvPreview").show();
+                          //$("#dvPreview").append("<img />");
                           var reader = new FileReader();
                           reader.onload = function (e) {
                               $("#dvPreview img").attr("src", e.target.result);
-                              $("#dvPreview img").attr("id", "imgDisplay");
+                              //$("#dvPreview img").attr("id", "imgDisplay");
                           }
                           reader.readAsDataURL($(this)[0].files[0]);
                       } else {

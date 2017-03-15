@@ -254,6 +254,7 @@
     <Compile Include="Controllers\API\FestivalsController.cs" />
     <Compile Include="Controllers\ArenasController.cs" />
     <Compile Include="Controllers\API\EnrollmentsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\EventImagesController.cs" />
@@ -433,7 +434,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\FestMVC20170301111312 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\DisplayImage.js" />
+    <Content Include="Scripts\displayImage.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
