@@ -11,6 +11,7 @@ namespace FestMVC.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
+        public string UserImage { get; set; }
         public virtual ICollection<Enrollment> Ennrollments { get; set; }
         public virtual ICollection<FestivalEnrollment> FestivalEnnrollments { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

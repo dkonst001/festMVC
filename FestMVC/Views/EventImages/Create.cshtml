@@ -15,11 +15,8 @@
         <h4>EventImage</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.Partial("_LoadImage", new FestMVC.Models.FileViewModels())
 
-        @section scripts {
-            <script language="javascript" type="text/javascript" src="~/Scripts/displayImage.js"></script>
-        }
+        @Html.Partial("_LoadImage", new FestMVC.Models.FileViewModel())
 
         <div class="form-group">
             @Html.LabelFor(model => model.EventId, "EventId", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -43,4 +40,7 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+@section scripts {
+    <script language="javascript" type="text/javascript" src="~/Scripts/displayImage.js"></script>
+}
 

@@ -11,24 +11,25 @@ namespace FestMVC.Controllers
 {
     public class BaseController : Controller
     {
-        private ApplicationUserManager _userManager;
-        public ApplicationUserManager UserManager
+        private ApplicationUserManager _activeUserManager;
+        public ApplicationUserManager ActiveUserManager
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _activeUserManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
-                _userManager = value;
+                _activeUserManager = value;
             }
         }
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             if (Request.IsAuthenticated)
             {
-                ApplicationUser activeUser = UserManager.FindById(User.Identity.GetUserId());
+                ApplicationUser activeUser = ActiveUserManager.FindById(User.Identity.GetUserId());
                 ViewBag.Name = activeUser.Name;
+                ViewBag.UserImage = activeUser.UserImage;
             }
         }
     }

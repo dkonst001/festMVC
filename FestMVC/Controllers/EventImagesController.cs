@@ -57,7 +57,7 @@ namespace FestMVC.Controllers
             {
                 if (eventImage.File != null && eventImage.File.ContentLength > 0)
                 {
-                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", eventImage.EventId);
+                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Image doesn't exist for the event
                     {
@@ -107,8 +107,8 @@ namespace FestMVC.Controllers
             {
                 if (eventImage.File != null && eventImage.File.ContentLength > 0)
                 {
-                    string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", eventImage.EventId);
-                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", eventImage.EventId);
+                    string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
+                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Selected image doesn't exist for the event
                     {
@@ -148,7 +148,7 @@ namespace FestMVC.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             EventImage eventImage = db.EventImages.Find(id);
-            string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", eventImage.EventId);
+            string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
             OtherClasses.Utilities.DeleteFile(previousPath, Server);//Delete the phisical image
             db.EventImages.Remove(eventImage);
             db.SaveChanges();

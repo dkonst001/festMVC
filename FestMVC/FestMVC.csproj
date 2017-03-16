@@ -301,12 +301,17 @@
     <Compile Include="Migrations\201703112003428_Add Base Enrollment with NumOfTickets.Designer.cs">
       <DependentUpon>201703112003428_Add Base Enrollment with NumOfTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703151928278_Add User Image to Identity.cs" />
+    <Compile Include="Migrations\201703151928278_Add User Image to Identity.Designer.cs">
+      <DependentUpon>201703151928278_Add User Image to Identity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseEnrollment.cs" />
     <Compile Include="Models\EventViewModel.cs" />
-    <Compile Include="Models\FileViewModels.cs" />
+    <Compile Include="Models\FileViewModel.cs" />
     <Compile Include="Models\IncrementedViewModel.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationTypes.cs" />
+    <Compile Include="Models\UserSettingViewModel.cs" />
     <Compile Include="OtherClasses\Utilities.cs" />
     <Compile Include="Migrations\201702131229444_New All.cs" />
     <Compile Include="Migrations\201702131229444_New All.Designer.cs">
@@ -545,6 +550,7 @@
     <Content Include="Views\Rooms\Details.cshtml" />
     <Content Include="Views\Rooms\Edit.cshtml" />
     <Content Include="Views\Rooms\Index.cshtml" />
+    <Content Include="Views\Manage\UserSetting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -648,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703112003428_Add Base Enrollment with NumOfTickets.resx">
       <DependentUpon>201703112003428_Add Base Enrollment with NumOfTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703151928278_Add User Image to Identity.resx">
+      <DependentUpon>201703151928278_Add User Image to Identity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

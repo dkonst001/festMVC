@@ -11,11 +11,14 @@
         <ul class="nav navbar-nav navbar-right">
             <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    @ViewBag.Greet  <span class="caret"></span>
+                    @ViewBag.Greet @if (ViewBag.UserImage != null)
+                    {
+                        <img src="@Url.Content(Path.Combine("~", ViewBag.UserImage))" id="userIcon" class="img-responsive" alt="Image file is missing or has different name" />
+                    }<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        @Html.ActionLink("Account Setting", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage"})
+                        @Html.ActionLink("Account Setting", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                     </li>
                     <li>
                         @Html.ActionLink("Manage Locations", "Index", "Locations")
@@ -34,6 +37,13 @@
                     </li>
                 </ul>
             </li>
+            @*<li>
+
+                @if (ViewBag.UserImage != null)
+                    {
+                    <img src="@Url.Content(Path.Combine("~", ViewBag.UserImage))" id="userIcon" class="img-responsive" alt="Image file is missing or has different name" />
+                }
+            </li>*@
 
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
