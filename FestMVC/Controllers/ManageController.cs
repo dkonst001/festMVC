@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FestMVC.Models;
+using System.IO;
 
 namespace FestMVC.Controllers
 {
@@ -241,6 +242,64 @@ namespace FestMVC.Controllers
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
+            return View(model);
+        }
+
+        //
+        // GET: /Account/UserSetting
+        [AllowAnonymous]
+        public ActionResult UserSetting()
+        {
+            ApplicationUser applicationUser = UserManager.FindById(User.Identity.GetUserId());
+            if (applicationUser == null)
+            {
+                return HttpNotFound();
+            }
+            UserSettingViewModel userSetting = new UserSettingViewModel();
+
+            userSetting.Name = applicationUser.Name;
+
+            if (applicationUser.UserImage != null)
+            {
+                ViewBag.FileName = Path.Combine("~", applicationUser.UserImage);
+                userSetting.ImageName = Path.GetFileName(applicationUser.UserImage);
+            }
+
+            return View(userSetting);
+        }
+
+        //
+        // POST: /Account/UserSetting
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserSetting([Bind(Include = "Name,ImageName,File")]UserSettingViewModel model)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                ApplicationUser applicationUser = UserManager.FindById(User.Identity.GetUserId());
+                applicationUser.Name = model.Name;
+
+                if (model.File != null && model.File.ContentLength > 0) {
+                    string previousPath = OtherClasses.Utilities.GetRelativeFilePath(applicationUser.UserImage, "Images", "Users", applicationUser.Id);
+                    string path = OtherClasses.Utilities.GetRelativeFilePath(model.File.FileName, "Images", "Users", applicationUser.Id);
+                    applicationUser.UserImage = path;
+                    if (previousPath != path)
+                    {
+                        OtherClasses.Utilities.DeleteFile(previousPath, Server);//Delete the previous image
+                        OtherClasses.Utilities.SaveFile(path, model.File, Server);
+
+                    }
+                }
+
+                UserManager.Update(applicationUser);
+                return RedirectToAction("Index");
+                
+            }
+
+            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

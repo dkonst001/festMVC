@@ -15,9 +15,10 @@ namespace FestMVC.OtherClasses
 
         }
 
-        public static string GetRelativeFilePath (string fileName, string root, string model, long id)
+        public static string GetRelativeFilePath (string fileName, string root, string model, string id)
         {
-            return Path.Combine(root, model, "" + id, Path.GetFileName(fileName));
+            if (fileName == null) return "Empty File Name";
+            return Path.Combine(root, model, id, Path.GetFileName(fileName));
         }
 
         public static void SaveFile(string path, HttpPostedFileBase file, HttpServerUtilityBase server)
