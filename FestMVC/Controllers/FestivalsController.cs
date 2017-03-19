@@ -15,13 +15,13 @@ namespace FestMVC.Controllers
     public class FestivalsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
 
         // GET: Festivals
         public ActionResult Index()
         {
-            
-            var festivals = db.Festivals.Include(f => f.Category).Include(f=>f.Location).Include(f => f.FestivalManager);
+
+            var festivals = db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager);
             return View(festivals.ToList());
         }
 
@@ -38,6 +38,49 @@ namespace FestMVC.Controllers
                 return HttpNotFound();
             }
             return View(festival);
+        }
+
+        //GetCategoryFestivals
+
+        public ActionResult FestivalEvents(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Festival festival = db.Festivals.Find(id);
+            if (festival == null)
+            {
+                return HttpNotFound();
+            }
+            List<FestivalEventViewModel> festivalEvents = new List<FestivalEventViewModel>();
+
+            if (festival.Events.Count() > 0)
+            {
+                foreach (var e in festival.Events)
+                {
+                    FestivalEventViewModel festivalEvent = new FestivalEventViewModel(e.Id, e.Name,
+                        e.Description, e.StartDate, e.StartDate, e.EndDate, e.Festival, e.Instructor, e.Room);
+                    if (e.EventImages.Count > 0)
+                    {
+                        foreach (var eI in e.EventImages)
+                        {
+                            festivalEvent.Images.Add(eI.Name);
+                        }
+                        if (festivalEvent.Images.Count() == 0)
+                        {
+                            festivalEvent.Images.Add("No Image Found");
+                        }
+                        festivalEvents.Add(festivalEvent);
+                    }
+                }
+
+            }
+
+
+            //For the time line
+            List<FestivalEventViewModel> sortedFestivalEvents = festivalEvents.OrderBy(o => o.StartDate).ToList();
+            return View(sortedFestivalEvents);
         }
 
         // GET: Festivals/Create
@@ -58,14 +101,14 @@ namespace FestMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                
+
+
                 db.Festivals.Add(festival);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            PopulateDropDownList(festival.FestivalManagerId,festival.CategoryId,festival.LocationId);
+            PopulateDropDownList(festival.FestivalManagerId, festival.CategoryId, festival.LocationId);
             return View(festival);
         }
 
@@ -146,7 +189,7 @@ namespace FestMVC.Controllers
                              select (new { d.Id, d.User.Name });
             ViewBag.FestivalManagerId = new SelectList(usersQuery, "Id", "Name", selectedUser);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", selectedCategory);
-            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name",selectedLocation);
+            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", selectedLocation);
         }
     }
 }

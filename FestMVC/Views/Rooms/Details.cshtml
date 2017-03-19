@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Locaytion.Name)
+            @Html.DisplayNameFor(model => model.Location.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Locaytion.Name)
+            @Html.DisplayFor(model => model.Location.Name)
         </dd>
 
         <dt>
@@ -37,6 +37,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer })
 </p>

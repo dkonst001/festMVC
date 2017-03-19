@@ -20,12 +20,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Fiesta", "Index", "Festivals", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Fiesta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("My Festivals", "Index", "FestivalEnrollments")</li>
-                </ul>
+                @if (Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("My Festivals", "UserIndex", "FestivalEnrollments")</li>
+                    </ul>
+                }
+                
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

@@ -305,9 +305,24 @@
     <Compile Include="Migrations\201703151928278_Add User Image to Identity.Designer.cs">
       <DependentUpon>201703151928278_Add User Image to Identity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703162110580_add Category Description.cs" />
+    <Compile Include="Migrations\201703162110580_add Category Description.Designer.cs">
+      <DependentUpon>201703162110580_add Category Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171143444_Change Festival Name to 30 char.cs" />
+    <Compile Include="Migrations\201703171143444_Change Festival Name to 30 char.Designer.cs">
+      <DependentUpon>201703171143444_Change Festival Name to 30 char.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180806391_Typo error in Room Location property name.cs" />
+    <Compile Include="Migrations\201703180806391_Typo error in Room Location property name.Designer.cs">
+      <DependentUpon>201703180806391_Typo error in Room Location property name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseEnrollment.cs" />
+    <Compile Include="Models\CategoryFestivalViewModel.cs" />
     <Compile Include="Models\EventViewModel.cs" />
+    <Compile Include="Models\FestivalEventViewModel.cs" />
     <Compile Include="Models\FileViewModel.cs" />
+    <Compile Include="Models\HomeCategoryViewModel.cs" />
     <Compile Include="Models\IncrementedViewModel.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationTypes.cs" />
@@ -452,6 +467,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\timeline.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -551,6 +567,8 @@
     <Content Include="Views\Rooms\Edit.cshtml" />
     <Content Include="Views\Rooms\Index.cshtml" />
     <Content Include="Views\Manage\UserSetting.cshtml" />
+    <Content Include="Views\Categories\CategoryFestivals.cshtml" />
+    <Content Include="Views\Festivals\FestivalEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -657,6 +675,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703151928278_Add User Image to Identity.resx">
       <DependentUpon>201703151928278_Add User Image to Identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703162110580_add Category Description.resx">
+      <DependentUpon>201703162110580_add Category Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171143444_Change Festival Name to 30 char.resx">
+      <DependentUpon>201703171143444_Change Festival Name to 30 char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180806391_Typo error in Room Location property name.resx">
+      <DependentUpon>201703180806391_Typo error in Room Location property name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

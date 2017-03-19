@@ -38,6 +38,24 @@ namespace FestMVC.Controllers
             return View(@eventViewModel);
         }
 
+
+        // GET: Events/Details/5
+        public ActionResult CategoryFestivalEventDetails(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Event @event = db.Events.Find(id);
+            if (@event == null)
+            {
+                return HttpNotFound();
+            }
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
+            return View(@eventViewModel);
+        }
+
         // GET: Events/Create
         public ActionResult Create()
         {

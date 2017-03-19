@@ -10,6 +10,7 @@ namespace FestMVC.Models
     public class FestivalEnrollment: BaseEnrollment
     {
         [Required]
+        [Editable(false)]
         [DisplayName("Festival")]
         public long FestivalId { get; set; }
         public virtual Festival Festival { get; set; }

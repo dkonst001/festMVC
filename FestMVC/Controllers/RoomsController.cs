@@ -17,7 +17,7 @@ namespace FestMVC.Controllers
         // GET: Rooms
         public ActionResult Index()
         {
-            var rooms = db.Rooms.Include(r => r.Locaytion);
+            var rooms = db.Rooms.Include(r => r.Location);
             return View(rooms.ToList());
         }
 

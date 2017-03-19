@@ -44,8 +44,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Remove Enrollment" class="btn btn-success" /> 
+            @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer, @class= "btn btn-success", autofocus = true })
         </div>
     }
 </div>

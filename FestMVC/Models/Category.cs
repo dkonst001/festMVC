@@ -14,6 +14,8 @@ namespace FestMVC.Models
         [StringLength(30)]
         [DisplayName("Category Name")]
         public string Name { get; set; }
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
         public virtual ICollection<Festival> Festivals { get; set; }
     }
 }
