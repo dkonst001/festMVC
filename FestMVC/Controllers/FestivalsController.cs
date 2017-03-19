@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin,FestivalManager")]
     public class FestivalsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -26,6 +27,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Festivals/Details/5
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -40,8 +43,9 @@ namespace FestMVC.Controllers
             return View(festival);
         }
 
-        //GetCategoryFestivals
-
+        //Get Festival Events
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult FestivalEvents(long? id)
         {
             if (id == null)
@@ -84,6 +88,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Festivals/Create
+        [OverrideAuthorization]
+        [Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create()
         {
             //ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
@@ -97,6 +103,8 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [OverrideAuthorization]
+        [Authorize(Roles = "Admin,FestivalManager,User")]
         public ActionResult Create([Bind(Include = "Id,Name,FestivalManagerId,Description,LocationId,CategoryId,StartDate,EndDate")] Festival festival)
         {
             if (ModelState.IsValid)

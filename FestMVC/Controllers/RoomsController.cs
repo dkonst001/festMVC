@@ -10,6 +10,7 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RoomsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,6 +23,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Rooms/Details/5
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult Details(long? id)
         {
             if (id == null)

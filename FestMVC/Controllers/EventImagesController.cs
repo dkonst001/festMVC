@@ -12,6 +12,7 @@ using System.IO;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin,FestivalManager")]
     public class EventImagesController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

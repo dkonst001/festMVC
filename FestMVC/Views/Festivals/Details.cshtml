@@ -69,5 +69,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer })
+    @Html.ActionLink("Enroll to the Festival", "Create", "FestivalEnrollments"
+               , new { id = Model.Id }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-success" })
 </p>

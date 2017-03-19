@@ -4,33 +4,58 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Festival Enrollment</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Enrollment</h4>
+        @*<h4>Enrollment</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EventId, "EventId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EventId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EventId, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.EventId, "EventId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("EventId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EventId, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
 
+            @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.EventId)
+            <div class="form-group">
+                @Html.LabelFor(model => model.User.Name, "User Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="form-control divInput">
+                        @Html.DisplayFor(model => model.User.Name)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Event.Name, "Festival Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="form-control divInput">
+                        @Html.DisplayFor(model => model.Event.Name)
+                    </div>
+                </div>
+            </div>
+
+        }
         <div class="form-group">
             @Html.LabelFor(model => model.NumOfTickets, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,16 +65,15 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-1 col-md-offset-2">
+                @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-offset btn-success" })
+            </div>
+            <div class="col-md-1">
+                <input type="submit" value="Enroll Event" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer,@class="btn btn-success" })
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
