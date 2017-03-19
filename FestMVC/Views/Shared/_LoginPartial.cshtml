@@ -20,31 +20,41 @@
                     <li>
                         @Html.ActionLink("Account Setting", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                     </li>
-                    <li>
-                        @Html.ActionLink("Manage Locations", "Index", "Locations")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Manage Instructors", "Index", "Instructors")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Manage Festivals", "Index", "Festivals")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Manage Festival Managers", "Index", "FestivalManagers")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Manage Categories", "Index", "Categories")
-                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            @Html.ActionLink("Manage Locations", "Index", "Locations")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Categories", "Index", "Categories")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Festival Managers", "Index", "FestivalManagers")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Instructors", "Index", "Instructors")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Festival Enrollments", "Index", "FestivalEnrollments")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Event Enrollments", "Index", "Enrollments")
+                        </li>
+                    }
+                    @if ((User.IsInRole("Admin") || (User.IsInRole("FestivalManager"))))
+                    {
+                        <li>
+                            @Html.ActionLink("Manage Festivals", "Index", "Festivals")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage Events", "Index", "Events")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage EventImages", "Index", "EventImages")
+                        </li>
+                    }
                 </ul>
             </li>
-            @*<li>
-
-                @if (ViewBag.UserImage != null)
-                    {
-                    <img src="@Url.Content(Path.Combine("~", ViewBag.UserImage))" id="userIcon" class="img-responsive" alt="Image file is missing or has different name" />
-                }
-            </li>*@
-
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     }

@@ -7,7 +7,7 @@
 <div class="jumbotron">
     <h1>@(Model.ToList()[0].Category.Name + " Festivals")</h1>
     <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
-    <p>@Html.ActionLink("Back to Festivals Categories", "Index", "Home", new { }, new { @class = "btn btn-primary" })</p>
+    <p>@Html.ActionLink("Back to Festivals Categories", "Index", "Home", new { }, new { @class = "btn btn-success" })</p>
 </div>
 
 
@@ -42,15 +42,29 @@
         @Html.Raw("<div class=\"timeline-body\">")
         <h2>@Model.ToList()[i].Name</h2>
         <p> @Model.ToList()[i].Description </p>
-        @Html.ActionLink("See Events...", "FestivalEvents", "Festivals"
-               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary" })
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                @Html.ActionLink("More Details", "Details", "Festivals"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success btn-lg" })
+            </div>
+            <div class="col-xs-12 col-md-4">
+                @Html.ActionLink("See Events Time Line", "FestivalEvents", "Festivals"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success btn-lg" })
+            </div>
+            <div class="col-xs-12 col-md-4">
+
+                @Html.ActionLink("Enroll Now!", "Create", "FestivalEnrollments"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success btn-lg" })
+            </div>
+
+            </div>
         @Html.Raw("</div>")
 
         @Html.Raw("<div class=\"timeline-footer\">")
-        @Html.Raw("<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>")
+        @*@Html.Raw("<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>")
         @Html.Raw("<a><i class=\"glyphicon glyphicon-share\"></i></a>")
         @Html.ActionLink("Enroll Now!", "Create", "FestivalEnrollments"
-               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary pull-right" })
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success pull-right" })*@
         @Html.Raw("</div>")
         @Html.Raw("</div>")
         @Html.Raw("</li>")

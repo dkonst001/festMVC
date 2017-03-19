@@ -23,7 +23,9 @@ namespace FestMVC.Controllers
         }
 
         // GET: Categories/Details/5
-       
+        [OverrideAuthorization]
+        [AllowAnonymous]
+
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -41,7 +43,7 @@ namespace FestMVC.Controllers
 
         //GetCategoryFestivals
         [OverrideAuthorization]
-        [Authorize(Roles = "User,Admin,FestivalManager,Anonymus")]
+        [AllowAnonymous]
         public ActionResult CategoryFestivals(long? id)
         {
             if (id == null)

@@ -89,6 +89,8 @@ namespace FestMVC.Controllers
 
                 enrollment.UserId = User.Identity.GetUserId();
                 enrollment.EventId = e.Id;
+                enrollment.Event = e;
+                enrollment.User = UserManager.FindById(User.Identity.GetUserId());
                 ViewBag.EventId = new SelectList(db.Events, "Id", "Name", e.Id);
                 ViewBag.UserId = new SelectList(db.Users, "Id", "Name", enrollment.UserId);
                 Session["returnAfterCreate"] = ControllerContext.HttpContext.Request.UrlReferrer.T‌​oString();
@@ -115,7 +117,7 @@ namespace FestMVC.Controllers
                 db.Enrollments.Add(enrollment);
                 db.SaveChanges();
                 string returnAfterCreate = Session["returnAfterCreate"].ToString();
-                return RedirectToAction("Index");
+                return RedirectToAction(returnAfterCreate);
             }
 
             ViewBag.EventId = new SelectList(db.Events, "Id", "Name", enrollment.EventId);

@@ -10,6 +10,7 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FestivalManagersController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,6 +23,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: FestivalManagers/Details/5
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult Details(long? id)
         {
             if (id == null)

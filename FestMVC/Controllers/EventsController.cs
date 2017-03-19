@@ -10,6 +10,7 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin,FestivalManager")]
     public class EventsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,6 +23,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Events/Details/5
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -40,6 +43,8 @@ namespace FestMVC.Controllers
 
 
         // GET: Events/Details/5
+        [OverrideAuthorization]
+        [AllowAnonymous]
         public ActionResult CategoryFestivalEventDetails(long? id)
         {
             if (id == null)
@@ -57,6 +62,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Events/Create
+        [OverrideAuthorization]
+        [Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create()
         {
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name");
@@ -70,6 +77,8 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [OverrideAuthorization]
+        [Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create([Bind(Include = "Id,Name,Description,StartDate,StartTime,EndTime,FestivalId,InstructorId,RoomId")] EventViewModel @eventViewModel)
         {
             if (ModelState.IsValid)

@@ -7,7 +7,7 @@
 <div class="jumbotron">
     <h1>@(Model.ToList()[0].Festival.Name + " Events")</h1>
     <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
-    <p>@Html.ActionLink("Back to Festivals", "CategoryFestivals", "Categories", new { id = Model.ToList()[0].Festival.Category.Id }, new { @class = "btn btn-primary" })</p>
+    <p>@Html.ActionLink("Back to Festivals", "CategoryFestivals", "Categories", new { id = Model.ToList()[0].Festival.Category.Id }, new { @class = "btn btn-success" })</p>
 </div>
 
 
@@ -41,14 +41,16 @@
         @Html.Raw("<div class=\"timeline-body\">")
         <h2>@Model.ToList()[i].Name</h2>
         <p> @Model.ToList()[i].Description </p>
-        @Html.ActionLink("See More Details...", "Details", "Events"
-               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("More Details", "Details", "Events"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Enroll Now!", "Create", "Enrollments"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-btn-success pull-right" })
         @Html.Raw("</div>")
         @Html.Raw("<div class=\"timeline-footer\">")
-        @Html.Raw("<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>")
+        @*@Html.Raw("<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>")
         @Html.Raw("<a><i class=\"glyphicon glyphicon-share\"></i></a>")
         @Html.ActionLink("Enroll Now!", "Create", "Enrollments"
-               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary pull-right" })
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-btn-success pull-right" })*@
         @Html.Raw("</div>")
         @Html.Raw("</div>")
         @Html.Raw("</li>")

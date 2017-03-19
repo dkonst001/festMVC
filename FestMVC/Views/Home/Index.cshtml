@@ -7,7 +7,7 @@
 <div class="jumbotron">
     <h1>Welcome to Fiesta!</h1>
     <p class="lead">The one place for all your Festiveties needs...</p>
-    <p>@Html.ActionLink("Learn more &raquo", "About", "Home",new { } ,new {@class="btn btn-primary btn-lg"})</p>
+    <p>@Html.ActionLink("Learn more about Fiesta", "About", "Home",new { } ,new {@class="btn btn-success btn-lg"})</p>
 </div>
 
 
@@ -19,9 +19,6 @@
 
         if (i % 3 == 0)
         { @Html.Raw("<div class=\"row stylish-panel\">")}
-        
-
-
         <div class="col-md-4">
             <div>
                 <img src="@Url.Content(Path.Combine("~", Model.ToList()[i].Images[0]))" alt="Image Doesn't Exist for the Category" class="img-circle img-thumbnail" />
@@ -29,8 +26,7 @@
                 <p>
                     @Model.ToList()[i].Description
                 </p>
-                @*<a href="#" class="btn btn-primary" title="See more">See What's Happening »</a>*@
-                @Html.ActionLink("See What's Happening", "CategoryFestivals", "Categories", new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("See Festivals Time Line", "CategoryFestivals", "Categories", new { id = Model.ToList()[i].Id }, new { @class = "btn btn-success" })
             </div>
         </div>
 
