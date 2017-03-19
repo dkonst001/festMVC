@@ -11,6 +11,7 @@ namespace FestMVC.Models
 
     {
         [Required]
+        [Editable(false)]
         [DisplayName("Event")]
         public long EventId { get; set; }
         public virtual Event Event { get; set; }

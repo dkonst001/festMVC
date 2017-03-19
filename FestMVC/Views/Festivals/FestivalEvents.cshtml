@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FestMVC.Models.FestivalEventViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>@(Model.ToList()[0].Festival.Name + " Events")</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+    <p>@Html.ActionLink("Back to Festivals", "CategoryFestivals", "Categories", new { id = Model.ToList()[0].Festival.Category.Id }, new { @class = "btn btn-primary" })</p>
+</div>
+
+
+<div class="container">
+    <div class="page-header text-center">
+        <h1 id="timeline">Festival Timeline</h1>
+    </div>
+    @Html.Raw("<ul class=\"timeline\">")
+    @for (int i = 0; i < Model.ToList().Count(); i++)
+    {
+        string toolTip = String.Format("Starts On {0} at {1} until {2}", Model.ToList()[i].StartDate.ToString("dd/MM/yyyy"),
+            Model.ToList()[i].StartTime.ToString("HH:mm"), Model.ToList()[i].EndTime.ToString("HH:mm"));
+        toolTip = "\"" + toolTip + "\"";
+        if (i % 2 == 0)
+        {
+            toolTip = String.Format("<div class=\"timeline-badge primary\"><a><i class=\"glyphicon glyphicon-record\" rel =\"tooltip\" title={0} id=\"\"></i></a></div>", toolTip);
+            @Html.Raw("<li>")
+            @Html.Raw(toolTip)
+        }
+        else
+        {
+            toolTip = String.Format("<div class=\"timeline-badge primary\"><a><i class=\"glyphicon glyphicon-record invert\" rel =\"tooltip\" title={0} id=\"\"></i></a></div>", toolTip);
+            @Html.Raw("<li class=\"timeline-inverted\">")
+            @Html.Raw(toolTip)
+        }
+        @Html.Raw("<div class=\"timeline-panel\">")
+        @Html.Raw("<div class=\"timeline-heading\">")
+        <img class="img-responsive" src="@Url.Content(Path.Combine("~", Model.ToList()[i].Images[0]))" />
+
+        @Html.Raw("</div>")
+        @Html.Raw("<div class=\"timeline-body\">")
+        <h2>@Model.ToList()[i].Name</h2>
+        <p> @Model.ToList()[i].Description </p>
+        @Html.ActionLink("See More Details...", "Details", "Events"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary" })
+        @Html.Raw("</div>")
+        @Html.Raw("<div class=\"timeline-footer\">")
+        @Html.Raw("<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>")
+        @Html.Raw("<a><i class=\"glyphicon glyphicon-share\"></i></a>")
+        @Html.ActionLink("Enroll Now!", "Create", "Enrollments"
+               , new { id = Model.ToList()[i].Id }, new { @class = "btn btn-primary pull-right" })
+        @Html.Raw("</div>")
+        @Html.Raw("</div>")
+        @Html.Raw("</li>")
+
+    }
+
+    @Html.Raw("<li class=\"clearfix\" style=\"float: none;\"></li>")
+    @Html.Raw("</ul>")
+</div>
+@section scripts {
+    <script language="javascript" type="text/javascript" src="~/Scripts/timeline.js"></script>
+}
+

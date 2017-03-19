@@ -11,9 +11,12 @@ namespace FestMVC.Models
     {
 
         public long Id { get; set; }
+
         [Required]
+        [Editable(false)]
         [DisplayName("User")]
         public string UserId { get; set; }
+        [DisplayName("Number Of Tickets")]
         public int NumOfTickets { get; set; }
         public virtual ApplicationUser User { get; set; }
     }

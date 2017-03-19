@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace FestMVC.Controllers
 {
@@ -14,13 +16,53 @@ namespace FestMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: FestivalEnrollments
-        public ActionResult Index()
+        private ApplicationUserManager _userManager;
+
+        public ApplicationUserManager UserManager
         {
-            var festivalEnrollments = db.FestivalEnrollments.Include(f => f.Festival).Include(f => f.User);
-            return View(festivalEnrollments.ToList());
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+
         }
 
+        // GET: FestivalEnrollments
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index()
+        {
+
+            List<FestivalEnrollment> festivalEnrollments;
+
+
+            festivalEnrollments = db.FestivalEnrollments.Include(f => f.Festival).Include(f => f.User).ToList();
+
+            return View(festivalEnrollments);
+        }
+
+        [Authorize(Roles = "User, Admin, FestivalManager")]
+        public ActionResult UserIndex()
+        {
+
+            List<FestivalEnrollment> festivalEnrollments;
+            if (User.Identity.IsAuthenticated)
+            {
+                ApplicationUser applicationUser = UserManager.FindById(User.Identity.GetUserId());
+                if (applicationUser == null)
+                {
+                    return HttpNotFound();
+                }
+                festivalEnrollments = applicationUser.FestivalEnnrollments.ToList();
+                return View("Index", festivalEnrollments);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+
+        }
+
+        [Authorize(Roles = "User, Admin, FestivalManager")]
         // GET: FestivalEnrollments/Details/5
         public ActionResult Details(long? id)
         {
@@ -36,14 +78,40 @@ namespace FestMVC.Controllers
             return View(festivalEnrollment);
         }
 
+        [Authorize(Roles = "User, Admin, FestivalManager")]
         // GET: FestivalEnrollments/Create
-        public ActionResult Create()
+        public ActionResult Create(long? id)
         {
-            ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name");
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name");
-            return View();
+
+            if (id != null)
+            {
+                Festival festival = db.Festivals.Find(id);
+
+                if (festival == null)
+                {
+                    return HttpNotFound();
+                }
+                FestivalEnrollment festivalEnrollment = new FestivalEnrollment();
+
+                festivalEnrollment.UserId = User.Identity.GetUserId();
+                festivalEnrollment.FestivalId = festival.Id;
+                festivalEnrollment.Festival = festival;
+                festivalEnrollment.User = UserManager.FindById(User.Identity.GetUserId());
+                ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", festival.Id);
+                ViewBag.UserId = new SelectList(db.Users, "Id", "Name", festivalEnrollment.UserId);
+                Session["returnAfterCreate"] = ControllerContext.HttpContext.Request.UrlReferrer.T‌​oString();
+                return View(festivalEnrollment);
+            }
+            else
+            {
+                ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name");
+                ViewBag.UserId = new SelectList(db.Users, "Id", "Name");
+                return View();
+            }
+
         }
 
+        [Authorize(Roles = "User, Admin, FestivalManager")]
         // POST: FestivalEnrollments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -55,7 +123,8 @@ namespace FestMVC.Controllers
             {
                 db.FestivalEnrollments.Add(festivalEnrollment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                string returnAfterCreate = Session["returnAfterCreate"].ToString();
+                return Redirect(returnAfterCreate);
             }
 
             ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", festivalEnrollment.FestivalId);
@@ -63,6 +132,7 @@ namespace FestMVC.Controllers
             return View(festivalEnrollment);
         }
 
+        [Authorize(Roles = "Admin, FestivalManager")]
         // GET: FestivalEnrollments/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -80,6 +150,7 @@ namespace FestMVC.Controllers
             return View(festivalEnrollment);
         }
 
+        [Authorize(Roles = "Admin, FestivalManager")]
         // POST: FestivalEnrollments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -98,6 +169,7 @@ namespace FestMVC.Controllers
             return View(festivalEnrollment);
         }
 
+        [Authorize(Roles = "User, Admin, FestivalManager")]
         // GET: FestivalEnrollments/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -114,6 +186,7 @@ namespace FestMVC.Controllers
         }
 
         // POST: FestivalEnrollments/Delete/5
+        [Authorize(Roles = "User, Admin, FestivalManager")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)

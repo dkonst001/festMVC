@@ -10,17 +10,20 @@ using FestMVC.Models;
 
 namespace FestMVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Categories
+        
         public ActionResult Index()
         {
             return View(db.Categories.ToList());
         }
 
         // GET: Categories/Details/5
+       
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -35,6 +38,58 @@ namespace FestMVC.Controllers
             return View(category);
         }
 
+
+        //GetCategoryFestivals
+        [OverrideAuthorization]
+        [Authorize(Roles = "User,Admin,FestivalManager,Anonymus")]
+        public ActionResult CategoryFestivals(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            List<CategoryFestivalViewModel> categoryFestivals = new List<CategoryFestivalViewModel>();
+
+
+            if (category.Festivals.Count() > 0)
+            {
+
+                foreach (var festival in category.Festivals)
+                {
+                    CategoryFestivalViewModel categoryFestival = new CategoryFestivalViewModel(festival.Id, festival.Name, festival.FestivalManager,
+                        festival.Description, festival.Location, festival.Category, festival.StartDate, festival.EndDate);
+                    if (festival.Events.Count() > 0)
+                    {
+                        foreach (var e in festival.Events)
+                        {
+                            if (e.EventImages.Count > 0)
+                            {
+                                foreach (var eI in e.EventImages)
+                                {
+                                    categoryFestival.Images.Add(eI.Name);
+                                }
+                            }
+                        }
+                    }
+                    if (categoryFestival.Images.Count() == 0)
+                    {
+                        categoryFestival.Images.Add("No Image Found");
+                    }
+                    categoryFestivals.Add(categoryFestival);
+                }
+
+            }
+            //For the time line
+            List<CategoryFestivalViewModel> SortedCategoryFestivals = categoryFestivals.OrderBy(o => o.StartDate).ToList();
+            return View(SortedCategoryFestivals);
+        }
+
+
         // GET: Categories/Create
         public ActionResult Create()
         {
@@ -46,7 +101,7 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Category category)
+        public ActionResult Create([Bind(Include = "Id,Name,Description")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +133,7 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Category category)
         {
             if (ModelState.IsValid)
             {
