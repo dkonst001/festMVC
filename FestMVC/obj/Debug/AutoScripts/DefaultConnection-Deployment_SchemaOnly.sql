@@ -109,6 +109,7 @@ CREATE TABLE [dbo].[AspNetUsers](
 	[AccessFailedCount] [int] NOT NULL,
 	[UserName] [nvarchar](256) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	[Name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[UserImage] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
  CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -123,6 +124,7 @@ GO
 CREATE TABLE [dbo].[Categories](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[Description] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
  CONSTRAINT [PK_dbo.Categories] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -138,6 +140,7 @@ CREATE TABLE [dbo].[Enrollments](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[UserID] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	[EventId] [bigint] NOT NULL,
+	[NumOfTickets] [int] NOT NULL,
  CONSTRAINT [PK_dbo.Enrollments] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -168,11 +171,14 @@ CREATE TABLE [dbo].[Events](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	[Description] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[StartTime] [datetime] NOT NULL,
-	[EndTime] [datetime] NOT NULL,
+	[StartTime] [datetime] NULL,
+	[EndTime] [datetime] NULL,
 	[FestivalId] [bigint] NOT NULL,
 	[InstructorId] [bigint] NOT NULL,
 	[RoomId] [bigint] NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NOT NULL,
+	[Discriminator] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
  CONSTRAINT [PK_dbo.Events] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -188,6 +194,7 @@ CREATE TABLE [dbo].[FestivalEnrollments](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[UserID] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	[FestivalId] [bigint] NOT NULL,
+	[NumOfTickets] [int] NOT NULL,
  CONSTRAINT [PK_dbo.FestivalEnrollments] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -215,13 +222,13 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Festivals](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[Name] [nvarchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 	[FestivalManagerId] [bigint] NOT NULL,
 	[Description] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[Location] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 	[StartDate] [datetime] NOT NULL,
 	[EndDate] [datetime] NOT NULL,
 	[CategoryId] [bigint] NOT NULL,
+	[LocationId] [bigint] NOT NULL,
  CONSTRAINT [PK_dbo.Festivals] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -248,11 +255,31 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+CREATE TABLE [dbo].[Locations](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[Adress] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[Capacity] [int] NOT NULL,
+	[Type] [int] NOT NULL,
+	[Size] [int] NOT NULL,
+	[NumberOfHalls] [int] NOT NULL,
+	[ArenaMapImage] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+ CONSTRAINT [PK_dbo.Locations] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE TABLE [dbo].[Rooms](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[Location] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 	[Capacity] [int] NOT NULL,
+	[LocationId] [bigint] NOT NULL,
  CONSTRAINT [PK_dbo.Rooms] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -377,6 +404,11 @@ CREATE NONCLUSTERED INDEX [IX_FestivalManagerId] ON [dbo].[Festivals]
 	[FestivalManagerId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
+CREATE NONCLUSTERED INDEX [IX_LocationId] ON [dbo].[Festivals]
+(
+	[LocationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
 SET ANSI_PADDING ON
 
 GO
@@ -385,7 +417,26 @@ CREATE NONCLUSTERED INDEX [IX_UserId] ON [dbo].[Instructors]
 	[UserId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
+CREATE NONCLUSTERED INDEX [IX_LocationId] ON [dbo].[Rooms]
+(
+	[LocationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
+ALTER TABLE [dbo].[Enrollments] ADD  DEFAULT ((0)) FOR [NumOfTickets]
+GO
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ('1900-01-01T00:00:00.000') FOR [StartDate]
+GO
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ('1900-01-01T00:00:00.000') FOR [EndDate]
+GO
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ('') FOR [Discriminator]
+GO
+ALTER TABLE [dbo].[FestivalEnrollments] ADD  DEFAULT ((0)) FOR [NumOfTickets]
+GO
 ALTER TABLE [dbo].[Festivals] ADD  DEFAULT ((0)) FOR [CategoryId]
+GO
+ALTER TABLE [dbo].[Festivals] ADD  DEFAULT ((0)) FOR [LocationId]
+GO
+ALTER TABLE [dbo].[Rooms] ADD  DEFAULT ((0)) FOR [LocationId]
 GO
 ALTER TABLE [dbo].[Arenas]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Arenas_dbo.Festivals_FestivalId] FOREIGN KEY([FestivalId])
 REFERENCES [dbo].[Festivals] ([Id])
@@ -481,9 +532,20 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Festivals] CHECK CONSTRAINT [FK_dbo.Festivals_dbo.FestivalManagers_FestivalManagerId]
 GO
+ALTER TABLE [dbo].[Festivals]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Festivals_dbo.Locations_LocationId] FOREIGN KEY([LocationId])
+REFERENCES [dbo].[Locations] ([Id])
+GO
+ALTER TABLE [dbo].[Festivals] CHECK CONSTRAINT [FK_dbo.Festivals_dbo.Locations_LocationId]
+GO
 ALTER TABLE [dbo].[Instructors]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Instructors_dbo.AspNetUsers_UserId] FOREIGN KEY([UserId])
 REFERENCES [dbo].[AspNetUsers] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Instructors] CHECK CONSTRAINT [FK_dbo.Instructors_dbo.AspNetUsers_UserId]
+GO
+ALTER TABLE [dbo].[Rooms]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Rooms_dbo.Locations_LocationId] FOREIGN KEY([LocationId])
+REFERENCES [dbo].[Locations] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Rooms] CHECK CONSTRAINT [FK_dbo.Rooms_dbo.Locations_LocationId]
 GO

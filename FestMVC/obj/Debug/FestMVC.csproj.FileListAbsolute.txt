@@ -345,7 +345,6 @@ C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestM
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddrelatedUserfprEnrollment.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddFestivalEnrollments.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ChangeUserIDtoUserId.resources
-C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.deletedIncrementstable.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.HandleFileload.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.AddLocationmodel.resources
 C:\Users\danny\Documents\MEGA\Web Application Course\CourseProject\FestMVC\FestMVC\FestMVC\obj\Debug\FestMVC.Migrations.ChangeRoomtopointtoLocation.resources
