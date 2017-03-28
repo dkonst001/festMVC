@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="FestMVC20170301111312" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\danny\\Documents\\MEGA\\Web\ Application\ Course\\CourseProject\\FestMVC\\FestMVC\\FestMVC\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\danny\\Documents\\MEGA\\Web\ Application\ Course\\CourseProject\\FestMVC\\FestMVC\\FestMVC\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="FestMVC20170301111312/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\danny\\Documents\\MEGA\\Web\ Application\ Course\\CourseProject\\FestMVC\\FestMVC\\FestMVC\\obj\\Debug\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-FestMVC-20170212113854.mdf;Initial Catalog=aspnet-FestMVC-20170212113854;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danny\\Documents\\MEGA\\Web\ Application\ Course\\CourseProject\\FestMVC\\FestMVC\\FestMVC\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

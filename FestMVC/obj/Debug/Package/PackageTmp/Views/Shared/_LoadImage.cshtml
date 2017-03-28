@@ -1,0 +1,19 @@
+﻿@model FestMVC.Models.FileViewModel
+
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.File, new { @class = "form-control", @id = "fileupload", type = "file", accept = ViewBag.accept })
+        @Html.ValidationMessageFor(model => model.File,"", new { @class = "text-danger" } )
+        <div id="dvPreview">
+            @if (ViewBag.FileName != null) {
+                <img src="@Url.Content(ViewBag.FileName)" id="imgDisplay" alt="Please Load Your Image" />
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -39,13 +39,14 @@
       <Objects>
         <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
           <Destination Path="Server=tcp:festmvc20170301111312dbserver.database.windows.net,1433%3bInitial Catalog=FestMVC20170301111312_db%3bPersist Security Info=False%3bUser ID=DannyAdmin%3bPassword=Pass%401234%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b" />
-          <Object Type="DbFullSql">
-            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-FestMVC-20170212113854.mdf%3bInitial Catalog=aspnet-FestMVC-20170212113854%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-FestMVC-20170212113854.mdf%3bInitial Catalog=aspnet-FestMVC-20170212113854%3bIntegrated Security=True" ScriptSchema="False" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_DataOnly.sql" Transacted="True" />
           </Object>
         </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -318,6 +319,7 @@
       <DependentUpon>201703180806391_Typo error in Room Location property name.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseEnrollment.cs" />
+    <Compile Include="Models\CarouselImagesViewModel.cs" />
     <Compile Include="Models\CategoryFestivalViewModel.cs" />
     <Compile Include="Models\EventViewModel.cs" />
     <Compile Include="Models\FestivalEventViewModel.cs" />
@@ -411,10 +413,6 @@
     <Compile Include="Migrations\201702260718185_Change UserID to UserId.cs" />
     <Compile Include="Migrations\201702260718185_Change UserID to UserId.Designer.cs">
       <DependentUpon>201702260718185_Change UserID to UserId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260843413_deleted Increments table.cs" />
-    <Compile Include="Migrations\201702260843413_deleted Increments table.Designer.cs">
-      <DependentUpon>201702260843413_deleted Increments table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201702261624016_Handle File load.cs" />
     <Compile Include="Migrations\201702261624016_Handle File load.Designer.cs">
@@ -569,6 +567,8 @@
     <Content Include="Views\Manage\UserSetting.cshtml" />
     <Content Include="Views\Categories\CategoryFestivals.cshtml" />
     <Content Include="Views\Festivals\FestivalEvents.cshtml" />
+    <Content Include="Views\Shared\_CarouselView.cshtml" />
+    <Content Include="Views\Account\Confirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -645,9 +645,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702260718185_Change UserID to UserId.resx">
       <DependentUpon>201702260718185_Change UserID to UserId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260843413_deleted Increments table.resx">
-      <DependentUpon>201702260843413_deleted Increments table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702261624016_Handle File load.resx">
       <DependentUpon>201702261624016_Handle File load.cs</DependentUpon>
