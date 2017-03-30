@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Fiesta</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/smoothness/css")
+
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/jquery-ui.toggleSwitch.css" rel="stylesheet" />
+
     <meta name="description" content="The description of my page" />
 </head>
 <body>
@@ -71,8 +75,10 @@
         </div>
     </div>*@
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    <script src="~/Scripts/jquery-ui.toggleSwitch.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

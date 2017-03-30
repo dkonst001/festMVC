@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
 using System.IO;
-
+using FestMVC.App_Code;
 
 namespace FestMVC.Controllers
 {
@@ -58,11 +58,11 @@ namespace FestMVC.Controllers
             {
                 if (eventImage.File != null && eventImage.File.ContentLength > 0)
                 {
-                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
+                    string path = Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Image doesn't exist for the event
                     {
-                        OtherClasses.Utilities.SaveFile(path, eventImage.File, Server);
+                        Utilities.SaveFile(path, eventImage.File, Server);
                         db.EventImages.Add(eventImage);
                         db.SaveChanges();
                         return RedirectToAction("Index");
@@ -108,13 +108,13 @@ namespace FestMVC.Controllers
             {
                 if (eventImage.File != null && eventImage.File.ContentLength > 0)
                 {
-                    string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
-                    string path = OtherClasses.Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
+                    string previousPath = Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
+                    string path = Utilities.GetRelativeFilePath(eventImage.File.FileName, "Images", "Events", ""+eventImage.EventId);
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Selected image doesn't exist for the event
                     {
-                        OtherClasses.Utilities.DeleteFile(previousPath, Server);//Delete the previous image
-                        OtherClasses.Utilities.SaveFile(path, eventImage.File, Server);
+                        Utilities.DeleteFile(previousPath, Server);//Delete the previous image
+                        Utilities.SaveFile(path, eventImage.File, Server);
                         db.Entry(eventImage).State = EntityState.Modified;
                         db.SaveChanges();
                         return RedirectToAction("Index");
@@ -149,8 +149,8 @@ namespace FestMVC.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             EventImage eventImage = db.EventImages.Find(id);
-            string previousPath = OtherClasses.Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
-            OtherClasses.Utilities.DeleteFile(previousPath, Server);//Delete the phisical image
+            string previousPath = Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
+            Utilities.DeleteFile(previousPath, Server);//Delete the phisical image
             db.EventImages.Remove(eventImage);
             db.SaveChanges();
             return RedirectToAction("Index");
