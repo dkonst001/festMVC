@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FestMVC.Models;
 using System.IO;
+using FestMVC.App_Code;
 
 namespace FestMVC.Controllers
 {
@@ -283,13 +284,13 @@ namespace FestMVC.Controllers
                 applicationUser.Name = model.Name;
 
                 if (model.File != null && model.File.ContentLength > 0) {
-                    string previousPath = OtherClasses.Utilities.GetRelativeFilePath(applicationUser.UserImage, "Images", "Users", applicationUser.Id);
-                    string path = OtherClasses.Utilities.GetRelativeFilePath(model.File.FileName, "Images", "Users", applicationUser.Id);
+                    string previousPath = Utilities.GetRelativeFilePath(applicationUser.UserImage, "Images", "Users", applicationUser.Id);
+                    string path = Utilities.GetRelativeFilePath(model.File.FileName, "Images", "Users", applicationUser.Id);
                     applicationUser.UserImage = path;
                     if (previousPath != path)
                     {
-                        OtherClasses.Utilities.DeleteFile(previousPath, Server);//Delete the previous image
-                        OtherClasses.Utilities.SaveFile(path, model.File, Server);
+                        Utilities.DeleteFile(previousPath, Server);//Delete the previous image
+                        Utilities.SaveFile(path, model.File, Server);
 
                     }
                 }

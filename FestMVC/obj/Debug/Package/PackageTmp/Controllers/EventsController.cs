@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
+using Microsoft.AspNet.Identity;
 
 namespace FestMVC.Controllers
 {
@@ -18,7 +19,12 @@ namespace FestMVC.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            var events = db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room);
+            List<Event> events = db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room).ToList();
+            if (User.IsInRole("FestivalManager"))
+            {
+                events = events.Where(x => x.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
+            }
+            
             return View(events.ToList());
         }
 
@@ -36,7 +42,15 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+            if (User.IsInRole("FestivalManager"))
+            {
+                if (@event.Festival.FestivalManager.UserId != User.Identity.GetUserId())
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
+
+            }
+                EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
                     @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival,@event.Room,@event.Instructor);
             return View(@eventViewModel);
         }

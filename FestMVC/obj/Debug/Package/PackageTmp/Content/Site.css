@@ -38,10 +38,7 @@ input, select, textarea, .divInput {
 
 .stylish-panel  .carousel-control:hover
 {
-
-    
-    opacity: 0.5;
-
+    opacity: 0.5
 }
 
 #imgDisplay, td > img {
@@ -616,6 +613,9 @@ li > a.btn.btn-xs.btn-success.active,
         background-color: transparent;
         border-color: transparent;
     }
+}
 
-  
+.form-control.form-toggle {
+    padding-left:0;
+    border:none;
 }
