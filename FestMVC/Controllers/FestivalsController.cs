@@ -21,8 +21,12 @@ namespace FestMVC.Controllers
         // GET: Festivals
         public ActionResult Index()
         {
+            var festivals = db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList();
 
-            var festivals = db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager);
+            if (User.IsInRole("FestivalManager"))
+            {
+                festivals = festivals.Where(x => x.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
+            }
             return View(festivals.ToList());
         }
 
