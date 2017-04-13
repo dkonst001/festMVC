@@ -24,7 +24,7 @@ namespace FestMVC.Controllers
             {
                 events = events.Where(x => x.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
             }
-            
+
             return View(events.ToList());
         }
 
@@ -42,16 +42,9 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            if (User.IsInRole("FestivalManager"))
-            {
-                if (@event.Festival.FestivalManager.UserId != User.Identity.GetUserId())
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
-                }
 
-            }
-                EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival,@event.Room,@event.Instructor);
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                 @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             return View(@eventViewModel);
         }
 
@@ -126,7 +119,7 @@ namespace FestMVC.Controllers
                 return HttpNotFound();
             }
             EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId,@event.StartDate,@event.EndDate, @event.Festival, @event.Room, @event.Instructor);
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", @event.FestivalId);
             PopulateDropDownList(@event.InstructorId, @event.FestivalId, @event.RoomId);
             //ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", @event.RoomId);
@@ -170,8 +163,8 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            EventViewModel @eventViewModel = new EventViewModel(@event.Id,@event.Name,@event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival, @event.Room, @event.Instructor);
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             return View(@eventViewModel);
         }
 

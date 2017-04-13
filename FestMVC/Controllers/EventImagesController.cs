@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using FestMVC.Models;
 using System.IO;
 using FestMVC.App_Code;
+using Microsoft.AspNet.Identity;
 
 namespace FestMVC.Controllers
 {
@@ -20,7 +21,12 @@ namespace FestMVC.Controllers
         // GET: EventImages
         public ActionResult Index()
         {
-            var eventImages = db.EventImages.Include(e => e.Event);
+            var eventImages = db.EventImages.Include(e => e.Event).ToList();
+            if (User.IsInRole("FestivalManager"))
+            {
+                eventImages = eventImages.Where(x => x.Event.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
+            }
+            
             return View(eventImages.ToList());
         }
 
