@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
 using Microsoft.AspNet.Identity;
+using FestMVC.App_Code;
 
 namespace FestMVC.Controllers
 {
@@ -19,13 +20,14 @@ namespace FestMVC.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            List<Event> events = db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room).ToList();
+            var events = db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room).ToList<IbaseModel>();
+
             if (User.IsInRole("FestivalManager"))
             {
-                events = events.Where(x => x.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
+                events = Utilities.FilterFestivalManager(events, User.Identity.GetUserId());
             }
 
-            return View(events.ToList());
+            return View(events.OfType<Event>());
         }
 
         // GET: Events/Details/5

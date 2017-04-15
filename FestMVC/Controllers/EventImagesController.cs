@@ -21,13 +21,12 @@ namespace FestMVC.Controllers
         // GET: EventImages
         public ActionResult Index()
         {
-            var eventImages = db.EventImages.Include(e => e.Event).ToList();
+            var eventImages = db.EventImages.Include(e => e.Event).ToList<IbaseModel>();
             if (User.IsInRole("FestivalManager"))
             {
-                eventImages = eventImages.Where(x => x.Event.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
-            }
-            
-            return View(eventImages.ToList());
+                eventImages = Utilities.FilterFestivalManager(eventImages, User.Identity.GetUserId());
+            }          
+            return View(eventImages.OfType<EventImage>());
         }
 
         // GET: EventImages/Details/5

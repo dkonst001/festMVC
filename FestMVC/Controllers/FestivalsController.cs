@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using FestMVC.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using FestMVC.App_Code;
 
 namespace FestMVC.Controllers
 {
@@ -21,13 +22,14 @@ namespace FestMVC.Controllers
         // GET: Festivals
         public ActionResult Index()
         {
-            var festivals = db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList();
+            var festivals =  db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList<IbaseModel>();
 
             if (User.IsInRole("FestivalManager"))
             {
-                festivals = festivals.Where(x => x.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
+                festivals=Utilities.FilterFestivalManager(festivals,User.Identity.GetUserId());
             }
-            return View(festivals.ToList());
+            //return View(festivals.ConvertAll(o => (Festival)o));
+            return View(festivals.OfType<Festival>());
         }
 
         // GET: Festivals/Details/5
