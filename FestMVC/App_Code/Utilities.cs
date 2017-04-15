@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FestMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -35,6 +36,12 @@ namespace FestMVC.App_Code
             {
                 System.IO.File.Delete(fullPath);
             }
+        }
+
+        public static List<IbaseModel> FilterFestivalManager(List<IbaseModel> modelList, string UserId)
+        {
+            modelList =  modelList.Where(x => x.getUserID()==UserId).ToList();
+            return modelList;
         }
     }
 }
