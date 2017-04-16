@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using FestMVC.Models;
 using System.IO;
 using FestMVC.App_Code;
+using Microsoft.AspNet.Identity;
 
 namespace FestMVC.Controllers
 {
@@ -20,8 +21,10 @@ namespace FestMVC.Controllers
         // GET: EventImages
         public ActionResult Index()
         {
-            var eventImages = db.EventImages.Include(e => e.Event);
-            return View(eventImages.ToList());
+            
+            var eventImages = Utilities.FilterFestivalManager(
+                db.EventImages.Include(e => e.Event).ToList<IbaseModel>(), User);       
+            return View(eventImages.OfType<EventImage>());
         }
 
         // GET: EventImages/Details/5
@@ -43,7 +46,8 @@ namespace FestMVC.Controllers
         // GET: EventImages/Create
         public ActionResult Create()
         {
-            ViewBag.EventId = new SelectList(db.Events, "Id", "Name");
+            //ViewBag.EventId = new SelectList(db.Events, "Id", "Name");
+            PopulateDropDownList();
             return View();
         }
 
@@ -62,6 +66,13 @@ namespace FestMVC.Controllers
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Image doesn't exist for the event
                     {
+                        Event @event = db.Events.Find(eventImage.EventId);
+
+                        if (Utilities.IsForbidden(@event, User))
+                        {
+                            return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                        }
+
                         Utilities.SaveFile(path, eventImage.File, Server);
                         db.EventImages.Add(eventImage);
                         db.SaveChanges();
@@ -70,7 +81,8 @@ namespace FestMVC.Controllers
                 }
             }
 
-            ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            //ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            PopulateDropDownList(eventImage.EventId);
             return View(eventImage);
         }
 
@@ -87,13 +99,22 @@ namespace FestMVC.Controllers
                 return HttpNotFound();
             }
 
+            Event @event = db.Events.Find(eventImage.EventId);
+
+            if (Utilities.IsForbidden(@event, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             if (eventImage.Name != null)
             {
                 ViewBag.FileName = Path.Combine("~", eventImage.Name);
                 eventImage.Name = Path.GetFileName(eventImage.Name);
             }
 
-            ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            //ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            PopulateDropDownList(eventImage.EventId);
+
             return View(eventImage);
         }
 
@@ -113,6 +134,13 @@ namespace FestMVC.Controllers
                     eventImage.Name = path;
                     if (FindEventImage(path) == 0)//Selected image doesn't exist for the event
                     {
+                        Event @event = db.Events.Find(eventImage.EventId);
+
+                        if (Utilities.IsForbidden(@event, User))
+                        {
+                            return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                        }
+
                         Utilities.DeleteFile(previousPath, Server);//Delete the previous image
                         Utilities.SaveFile(path, eventImage.File, Server);
                         db.Entry(eventImage).State = EntityState.Modified;
@@ -121,7 +149,9 @@ namespace FestMVC.Controllers
                     }
                 }
             }
-            ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            //ViewBag.EventId = new SelectList(db.Events, "Id", "Name", eventImage.EventId);
+            PopulateDropDownList(eventImage.EventId);
+
             return View(eventImage);
         }
 
@@ -138,7 +168,12 @@ namespace FestMVC.Controllers
                 return HttpNotFound();
             }
 
-            
+            Event @event = db.Events.Find(eventImage.EventId);
+
+            if (Utilities.IsForbidden(@event, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
 
             return View(eventImage);
         }
@@ -149,6 +184,14 @@ namespace FestMVC.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             EventImage eventImage = db.EventImages.Find(id);
+
+            Event @event = db.Events.Find(eventImage.EventId);
+
+            if (Utilities.IsForbidden(@event, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             string previousPath = Utilities.GetRelativeFilePath(eventImage.Name, "Images", "Events", ""+eventImage.EventId);
             Utilities.DeleteFile(previousPath, Server);//Delete the phisical image
             db.EventImages.Remove(eventImage);
@@ -172,6 +215,15 @@ namespace FestMVC.Controllers
                 if (item.Name == path) { return item.Id; }
             }
             return 0;
+        }
+
+        private void PopulateDropDownList(object selectedEvent = null)
+        {
+
+            var events = Utilities.FilterFestivalManager(db.Events.Include(f => f.Festival).ToList<IbaseModel>(), User);
+            
+            ViewBag.EventId = new SelectList(events.OfType<Event>(), "Id", "Name", selectedEvent);
+
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Web;
 
 namespace FestMVC.Models
 {
-    public class EventImage
+    public class EventImage:IbaseModel
     {
         public long Id { get; set; }
         [DisplayName("Image Name")]
@@ -19,5 +19,10 @@ namespace FestMVC.Models
         [DisplayName("Event Name")]
         public long EventId { get; set; }
         public virtual Event Event { get; set; }
+
+        public string getUserID()
+        {
+            return Event.Festival.FestivalManager.UserId;
+        }
     }
 }

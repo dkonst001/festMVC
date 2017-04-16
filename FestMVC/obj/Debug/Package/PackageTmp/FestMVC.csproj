@@ -345,12 +345,15 @@
       <DependentUpon>201703180806391_Typo error in Room Location property name.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseEnrollment.cs" />
+    <Compile Include="Models\BaseFestivalManager.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CarouselImagesViewModel.cs" />
     <Compile Include="Models\CategoryFestivalViewModel.cs" />
     <Compile Include="Models\EventViewModel.cs" />
     <Compile Include="Models\FestivalEventViewModel.cs" />
     <Compile Include="Models\FileViewModel.cs" />
     <Compile Include="Models\HomeCategoryViewModel.cs" />
+    <Compile Include="Models\IbaseModel.cs" />
     <Compile Include="Models\IncrementedViewModel.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationTypes.cs" />

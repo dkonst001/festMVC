@@ -22,12 +22,11 @@ namespace FestMVC.Controllers
         // GET: Festivals
         public ActionResult Index()
         {
-            var festivals =  db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList<IbaseModel>();
-
-            if (User.IsInRole("FestivalManager"))
-            {
-                festivals=Utilities.FilterFestivalManager(festivals,User.Identity.GetUserId());
-            }
+            //var festivals = db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList<IbaseModel>();
+                        
+             var festivals = Utilities.FilterFestivalManager(
+                 db.Festivals.Include(f => f.Category).Include(f => f.Location).Include(f => f.FestivalManager).ToList<IbaseModel>(), User);
+            
             //return View(festivals.ConvertAll(o => (Festival)o));
             return View(festivals.OfType<Festival>());
         }
@@ -98,8 +97,6 @@ namespace FestMVC.Controllers
         [Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create()
         {
-            //ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
-            //ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             PopulateDropDownList();
             return View();
         }
@@ -109,19 +106,23 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [OverrideAuthorization]
-        [Authorize(Roles = "Admin,FestivalManager,User")]
+        //[OverrideAuthorization]
+        //[Authorize(Roles = "Admin,FestivalManager,User")]
         public ActionResult Create([Bind(Include = "Id,Name,FestivalManagerId,Description,LocationId,CategoryId,StartDate,EndDate")] Festival festival)
         {
             if (ModelState.IsValid)
             {
+                FestivalManager festivalManager = db.FestivalManagers.Find(festival.FestivalManagerId);
 
+                if (Utilities.IsForbidden(festivalManager, User))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
 
                 db.Festivals.Add(festival);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             PopulateDropDownList(festival.FestivalManagerId, festival.CategoryId, festival.LocationId);
             return View(festival);
         }
@@ -133,12 +134,19 @@ namespace FestMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Festival festival = db.Festivals.Find(id);
+
             if (festival == null)
             {
                 return HttpNotFound();
             }
-            //ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", festival.CategoryId);
+
+            if (Utilities.IsForbidden(festival, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             PopulateDropDownList(festival.FestivalManagerId, festival.CategoryId, festival.LocationId);
             return View(festival);
         }
@@ -152,6 +160,12 @@ namespace FestMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                if (Utilities.IsForbidden(festival,User))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
+
                 db.Entry(festival).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -173,6 +187,12 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (Utilities.IsForbidden(festival, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             return View(festival);
         }
 
@@ -182,6 +202,12 @@ namespace FestMVC.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             Festival festival = db.Festivals.Find(id);
+
+            if (Utilities.IsForbidden(festival,User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             db.Festivals.Remove(festival);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -198,12 +224,31 @@ namespace FestMVC.Controllers
 
         private void PopulateDropDownList(object selectedUser = null, object selectedCategory = null, object selectedLocation = null)
         {
-            var usersQuery = from d in db.FestivalManagers
+            var   festivalManagers = Utilities.FilterFestivalManager(db.FestivalManagers.ToList<IbaseModel>(), User);
+            
+            var usersQuery = from d in festivalManagers.OfType<FestivalManager>()
                              orderby d.User.Name
                              select (new { d.Id, d.User.Name });
+
+
             ViewBag.FestivalManagerId = new SelectList(usersQuery, "Id", "Name", selectedUser);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", selectedCategory);
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", selectedLocation);
         }
+
+        //private bool IsForbidden(Festival festival)
+        //{
+        //    if (User.IsInRole("FestivalManager"))
+        //    {
+        //        FestivalManager festivalManager = db.FestivalManagers.Find(festival.FestivalManagerId);
+
+        //        if (!Utilities.FestivalManagerIsCurrentUser(festivalManager, User.Identity.GetUserId()))
+        //        {
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
     }
 }
