@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FestMVC.Models;
 using Microsoft.AspNet.Identity;
+using FestMVC.App_Code;
 
 namespace FestMVC.Controllers
 {
@@ -19,13 +20,11 @@ namespace FestMVC.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            List<Event> events = db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room).ToList();
-            if (User.IsInRole("FestivalManager"))
-            {
-                events = events.Where(x => x.Festival.FestivalManager.UserId == User.Identity.GetUserId()).ToList();
-            }
             
-            return View(events.ToList());
+            var events = Utilities.FilterFestivalManager(
+                db.Events.Include(f => f.Festival).Include(f => f.Instructor).Include(f => f.Room).ToList<IbaseModel>(), User);
+           
+            return View(events.OfType<Event>());
         }
 
         // GET: Events/Details/5
@@ -42,16 +41,9 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            if (User.IsInRole("FestivalManager"))
-            {
-                if (@event.Festival.FestivalManager.UserId != User.Identity.GetUserId())
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
-                }
 
-            }
-                EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival,@event.Room,@event.Instructor);
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                 @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             return View(@eventViewModel);
         }
 
@@ -76,8 +68,8 @@ namespace FestMVC.Controllers
         }
 
         // GET: Events/Create
-        [OverrideAuthorization]
-        [Authorize(Roles = "Admin, FestivalManager, User")]
+        //[OverrideAuthorization]
+        //[Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create()
         {
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name");
@@ -91,8 +83,8 @@ namespace FestMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [OverrideAuthorization]
-        [Authorize(Roles = "Admin, FestivalManager, User")]
+        //[OverrideAuthorization]
+        //[Authorize(Roles = "Admin, FestivalManager, User")]
         public ActionResult Create([Bind(Include = "Id,Name,Description,StartDate,StartTime,EndTime,FestivalId,InstructorId,RoomId")] EventViewModel @eventViewModel)
         {
             if (ModelState.IsValid)
@@ -100,7 +92,13 @@ namespace FestMVC.Controllers
                 Event @event = new Event(@eventViewModel.Id, @eventViewModel.Name, @eventViewModel.Description, @eventViewModel.FestivalId,
                     @eventViewModel.InstructorId, @eventViewModel.RoomId,
                     @eventViewModel.StartDate, @eventViewModel.StartTime, @eventViewModel.EndTime);
-                //Event @event = new Event();
+
+                Festival festival = db.Festivals.Find(@event.FestivalId);
+
+                if (Utilities.IsForbidden(festival, User))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
 
                 db.Events.Add(@event);
                 db.SaveChanges();
@@ -120,13 +118,23 @@ namespace FestMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Event @event = db.Events.Find(id);
+
             if (@event == null)
             {
                 return HttpNotFound();
             }
+
+            Festival festival = db.Festivals.Find(@event.FestivalId);
+
+            if (Utilities.IsForbidden(festival, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId,@event.StartDate,@event.EndDate, @event.Festival, @event.Room, @event.Instructor);
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             //ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", @event.FestivalId);
             PopulateDropDownList(@event.InstructorId, @event.FestivalId, @event.RoomId);
             //ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", @event.RoomId);
@@ -146,6 +154,13 @@ namespace FestMVC.Controllers
                 Event @event = new Event(@eventViewModel.Id, @eventViewModel.Name, @eventViewModel.Description, @eventViewModel.FestivalId,
                     @eventViewModel.InstructorId, @eventViewModel.RoomId,
                     @eventViewModel.StartDate, @eventViewModel.StartTime, @eventViewModel.EndTime);
+
+                Festival festival = db.Festivals.Find(@event.FestivalId);
+
+                if (Utilities.IsForbidden(festival, User))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
 
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
@@ -170,8 +185,14 @@ namespace FestMVC.Controllers
             {
                 return HttpNotFound();
             }
-            EventViewModel @eventViewModel = new EventViewModel(@event.Id,@event.Name,@event.Description, @event.FestivalId,
-                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate,@event.Festival, @event.Room, @event.Instructor);
+
+            if (Utilities.IsForbidden(@event, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
+            EventViewModel @eventViewModel = new EventViewModel(@event.Id, @event.Name, @event.Description, @event.FestivalId,
+                    @event.InstructorId, @event.RoomId, @event.StartDate, @event.EndDate, @event.Festival, @event.Room, @event.Instructor);
             return View(@eventViewModel);
         }
 
@@ -181,6 +202,12 @@ namespace FestMVC.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             Event @event = db.Events.Find(id);
+
+            if (Utilities.IsForbidden(@event, User))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            }
+
             db.Events.Remove(@event);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -196,13 +223,16 @@ namespace FestMVC.Controllers
         }
         private void PopulateDropDownList(object selectedUser = null, object selectedFestival = null, object selectedRoom = null)
         {
+            
+            var festivals = Utilities.FilterFestivalManager(db.Festivals.Include(f => f.FestivalManager).ToList<IbaseModel>(), User);
+           
             var usersQuery = from d in db.Instructors
                              orderby d.User.Name
                              select (new { d.Id, d.User.Name });
-            ViewBag.InstructorId = new SelectList(usersQuery, "Id", "Name", selectedUser);
-            ViewBag.FestivalId = new SelectList(db.Festivals, "Id", "Name", selectedFestival);
-            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", selectedRoom);
 
+            ViewBag.InstructorId = new SelectList(usersQuery, "Id", "Name", selectedUser);
+            ViewBag.FestivalId = new SelectList(festivals.OfType<Festival>(), "Id", "Name", selectedFestival);
+            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", selectedRoom);
 
         }
     }

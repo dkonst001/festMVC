@@ -8,7 +8,7 @@ using System.Web;
 
 namespace FestMVC.Models
 {
-    public class Festival
+    public class Festival:IbaseModel
     {
         public long Id { get; set; }
         [Required]
@@ -39,6 +39,9 @@ namespace FestMVC.Models
         public virtual Category Category { get; set; }
         public virtual Location Location { get; set; }
 
-
+        public string getUserID()
+        {
+            return FestivalManager.UserId ;
+        }
     }
 }
