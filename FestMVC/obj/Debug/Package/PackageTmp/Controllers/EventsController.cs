@@ -232,8 +232,13 @@ namespace FestMVC.Controllers
 
             ViewBag.InstructorId = new SelectList(usersQuery, "Id", "Name", selectedUser);
             ViewBag.FestivalId = new SelectList(festivals.OfType<Festival>(), "Id", "Name", selectedFestival);
-            ViewBag.RoomId = new SelectList(db.Rooms, "Id", "Name", selectedRoom);
 
+            if (selectedFestival!=null)
+            {
+                Festival festival = db.Festivals.Find(selectedFestival as long?);
+                ViewBag.RoomId = new SelectList(festival.Location.Rooms, "Id", "Name", selectedRoom);
+            }
+            
         }
     }
 }
