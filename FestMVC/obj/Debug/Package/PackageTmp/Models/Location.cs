@@ -21,7 +21,10 @@ namespace FestMVC.Models
         [DisplayName("Location Map")]
         public string ArenaMapImage { get; set; }
 
+        public virtual ICollection<Room> Rooms { get; set; }
+
+
     }
-    
-        
+
+
 }

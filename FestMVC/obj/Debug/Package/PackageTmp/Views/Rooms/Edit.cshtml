@@ -51,3 +51,18 @@
 <div>
     @Html.ActionLink("Back...", null, null, null, new { href = Request.UrlReferrer })
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script type="text/javascript" src="~/Scripts/jqueryRooms.js"></script>
+    <script type="text/javascript">
+        MYLIBRARY.init(['@Url.Action("GetFestivalRooms", "Festivals", null, Request.Url.Scheme)']);
+        //MYLIBRARY.festivalRooms();
+
+    </script>
+
+}
+
+

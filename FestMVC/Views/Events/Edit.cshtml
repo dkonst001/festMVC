@@ -96,4 +96,14 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script type="text/javascript" src="~/Scripts/jqueryRooms.js"></script>
+    <script type="text/javascript">
+        //URL.Action is a RAZOR helper method and so init is used to transffer the Url to the external JS file.
+        festivalRooms.init(['@Url.Action("GetFestivalRooms", "Festivals", null, Request.Url.Scheme)']);
+    </script>
+
 }
+
+
